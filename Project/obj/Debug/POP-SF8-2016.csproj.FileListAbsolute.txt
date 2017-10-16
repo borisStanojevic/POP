@@ -1,0 +1,7 @@
+C:\Users\sf8-2016\source\repos\POP-SF8-2016\POP-SF8-2016\bin\Debug\POP-SF8-2016.exe.config
+C:\Users\sf8-2016\source\repos\POP-SF8-2016\POP-SF8-2016\bin\Debug\POP-SF8-2016.exe
+C:\Users\sf8-2016\source\repos\POP-SF8-2016\POP-SF8-2016\bin\Debug\POP-SF8-2016.pdb
+C:\Users\sf8-2016\source\repos\POP-SF8-2016\POP-SF8-2016\obj\Debug\POP-SF8-2016.csprojResolveAssemblyReference.cache
+C:\Users\sf8-2016\source\repos\POP-SF8-2016\POP-SF8-2016\obj\Debug\POP-SF8-2016.csproj.CoreCompileInputs.cache
+C:\Users\sf8-2016\source\repos\POP-SF8-2016\POP-SF8-2016\obj\Debug\POP-SF8-2016.exe
+C:\Users\sf8-2016\source\repos\POP-SF8-2016\POP-SF8-2016\obj\Debug\POP-SF8-2016.pdb
