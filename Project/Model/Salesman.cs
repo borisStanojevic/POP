@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POP_SF8_2016.Model
 {
-    class Salesman
+    public class Salesman
     {
     }
 }
