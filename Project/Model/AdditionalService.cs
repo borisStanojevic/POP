@@ -8,9 +8,9 @@ namespace POP_SF8_2016.Model
 {
     public class AdditionalService
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public double Price { get; set; }
         public bool Deleted { get; set; }
-
     }
 }

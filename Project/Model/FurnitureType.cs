@@ -8,6 +8,7 @@ namespace POP_SF8_2016.Model
 {
     public class FurnitureType
     {
+        public int Id { get; set; }
         public string Name { get; set; }
         public bool Deleted { get; set; }
     }

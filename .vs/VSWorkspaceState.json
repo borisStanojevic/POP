@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\Project",
-    "\\Project\\Model"
+    "\\Project\\Model",
+    "\\Project\\Tests"
   ],
-  "SelectedNode": "\\Project\\Model\\Salesman.cs",
+  "SelectedNode": "\\POP-SF8-2016.sln",
   "PreviewInSolutionExplorer": false
 }
