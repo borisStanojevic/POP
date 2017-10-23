@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<Store xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Id>1</Id>
+  <TaxingId>12223124</TaxingId>
+  <Name>Forma FTNale</Name>
+  <Address>Trg Dositeja obradovica 6</Address>
+  <Phone>021/445-342</Phone>
+  <Email>kontakt@uns.ac.ftn.ac.rs</Email>
+  <Website>www.nekisalon.com</Website>
+  <Account>840-00076899-83</Account>
+  <Deleted>false</Deleted>
+</Store>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace POP_SF8_2016.Model
 {
+    [Serializable]
     public class Store
     {
         public int Id { get; set; }
@@ -18,4 +19,6 @@ namespace POP_SF8_2016.Model
         public string Account { get; set; }
         public bool Deleted { get; set; }
     }
+
+
 }
