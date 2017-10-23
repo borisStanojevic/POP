@@ -1,10 +1,12 @@
 ﻿using POP_SF8_2016.Model;
+using Project.Model;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace Project
 {
@@ -14,7 +16,7 @@ namespace Project
         {
             Store s1 = new Store()
             {
-                Id = 1,
+                Id = 122,
                 Name = "Formaaaaaaaaa FTNale",
                 Address = "Trg Dositeja obradovica 6",
                 Account = "840-00076899-83",
@@ -26,22 +28,19 @@ namespace Project
 
             };
             // Inicijalizujem xml pisac i odredjujem koji tip objekata ce upisivati
-            System.Xml.Serialization.XmlSerializer xmlWriter = new System.Xml.Serialization.XmlSerializer(typeof(Store));
-
-            //Pravim fajl i linkujem file stream na taj fajl
-            var path = Environment.GetFolderPath(Environment.SpecialFolder.Desktop) + "//C#//POP-SF8-2016//Project/DATA//myfile.xml";
-
-            System.IO.FileStream fileVar = System.IO.File.Create(path);
-
-            //Serijalizujem objekat s1 u fajl
-            xmlWriter.Serialize(fileVar, s1);
-            fileVar.Close();
 
 
+            XmlSerializer xmlWriter = new XmlSerializer(s1.GetType());
 
+            //Kreiram relativnu putanju do fajla u koji treba da serijalizujem odredjeni objekat
+            string path = Directory.GetCurrentDirectory() + "\\..\\..\\Data\\stores.xml";
+            //Kreiram stream i proslijedim mu putanju
+            FileStream stream = File.Open(path,FileMode.Append);
 
-            Console.WriteLine($"Welcome to our furniture store {s1.Name}");
-        }
+            //Serijalizujem objekat
+            xmlWriter.Serialize(stream, s1);
+            stream.Close();
+        }        
 
         private static void PrintMainMenu()
         {
