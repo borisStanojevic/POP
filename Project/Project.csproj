@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9D935498-D78B-463D-969F-BDAEA996D133}</ProjectGuid>
+    <ProjectGuid>{1D5E6913-902F-4D7A-8D99-0268AB0C9C6A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>POP_SF8_2016</RootNamespace>
-    <AssemblyName>POP-SF8-2016</AssemblyName>
+    <RootNamespace>Project</RootNamespace>
+    <AssemblyName>Project</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,17 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Person.cs" />
+    <Compile Include="Model\ActionSale.cs" />
+    <Compile Include="Model\AdditionalService.cs" />
+    <Compile Include="Model\Furniture.cs" />
+    <Compile Include="Model\FurnitureType.cs" />
+    <Compile Include="Model\Sale.cs" />
+    <Compile Include="Model\Store.cs" />
+    <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-    <Folder Include="NewFolder2\" />
-    <Folder Include="NewFolder3\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

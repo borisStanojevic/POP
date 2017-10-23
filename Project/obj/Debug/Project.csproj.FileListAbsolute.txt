@@ -1,0 +1,6 @@
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\Project\Project\bin\Debug\Project.exe.config
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\Project\Project\bin\Debug\Project.exe
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\Project\Project\bin\Debug\Project.pdb
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\Project\Project\obj\Debug\Project.csproj.CoreCompileInputs.cache
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\Project\Project\obj\Debug\Project.exe
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\Project\Project\obj\Debug\Project.pdb
