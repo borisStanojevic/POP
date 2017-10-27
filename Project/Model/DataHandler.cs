@@ -8,13 +8,14 @@ using System.Xml.Serialization;
 
 namespace Project.Model
 {
+    //Klasa koja rukuje podacima. Pisanje, citanje ...
     class DataHandler
     {
 
         public void WriteEntity(Object entity)
         {
             Type entityType = entity.GetType();
-            string fileName = "";
+            string fileName;
             switch (entityType.Name)
             {
                 case "Furniture":
@@ -36,20 +37,33 @@ namespace Project.Model
                     fileName = "additional_services.xml";
                     break;
                 default:
+                    fileName = "";
                     break;
             }
-             //Incijalizujem XmlSerialzier i kazem mu koji tip podataka treba da serijalizuje
-             XmlSerializer xmlWriter = new XmlSerializer(entityType);
-             
-             //Kreiram relativnu putanju do fajla u koji treba da serijalizujem odredjeni objekat
-             string path = $"{Directory.GetCurrentDirectory()}\\..\\..Data\\{fileName}";
-             //Kreiram stream i proslijedim mu putanju
-             FileStream stream = File.Open(path,FileMode.Append);
+            /*
+               U sledece tri linije inicijalizujem XmlSerializer kome u konstruktoru kazem koji tip objekta se serijalizuje,
+               kreiram putanju do fajla u koji cu serijalizovati objekat (putanja je relativna), i kreiram stream nad tim fajlom,
+               u modu append da ne bi svaki put pregazio postojece podatke u fajlu.
+            */
+            XmlSerializer writer;
+            string path;
+            FileStream stream;
+            try
+            {
+                writer = new XmlSerializer(entityType);
+                path = $"{Directory.GetCurrentDirectory()}\\..\\..Data\\{fileName}";
+                stream = File.Open(path, FileMode.Append);
 
-            //Serijalizujem objekat
-            xmlWriter.Serialize(stream, entity);
+                writer.Serialize(stream, entity);
 
-             stream.Close();
+                stream.Close();
+            }
+            catch (IOException exc)
+            {
+                Console.WriteLine(exc.Data);
+                throw;
+            }
+
             }
 
         }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace POP_SF8_2016.Model
 {
-    [Serializable]
     public class Store
     {
         public int Id { get; set; }
