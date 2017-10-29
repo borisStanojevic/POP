@@ -4,8 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POP_SF8_2016.Model
+namespace Project.Model
 {
+    public enum TypeOfUser
+    {
+        Admin,
+        Salesman
+    }
+
     [Serializable]
     public class User
     {
@@ -14,6 +20,7 @@ namespace POP_SF8_2016.Model
         public string Surname { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
+        public TypeOfUser UserType { get; set; }
         public bool Deleted { get; set; }
     }
 }

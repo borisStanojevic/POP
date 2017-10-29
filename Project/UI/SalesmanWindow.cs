@@ -16,16 +16,19 @@ namespace Project.UI
 
         private void MainMenu()
         {
+            Console.WriteLine("=======================");
+            Console.WriteLine("1. List sales");
+            Console.WriteLine("2. Add new sale");
+            Console.WriteLine("3. Edit existing sale");
+            Console.WriteLine("4. Delete existing sale");
+            Console.WriteLine("0. Exit");
+            Console.WriteLine("=======================\n");
+
             int choice = int.Parse(Console.ReadLine());
-            do
-            {
-                Console.WriteLine("1. List sales");
-                Console.WriteLine("2. Add new sale");
-                Console.WriteLine("3. Edit existing sale");
-                Console.WriteLine("4. Delete existing sale");
-                Console.WriteLine("0. Exit");
-            }
-            while (true);
+
+            while (choice < 0 || choice > 4)
+                choice = int.Parse(Console.ReadLine());
+
             switch (choice)
             {
                 case 1:

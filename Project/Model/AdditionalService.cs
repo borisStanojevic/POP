@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace POP_SF8_2016.Model
+namespace Project.Model
 {
+    [Serializable]
     public class AdditionalService
     {
         public int Id { get; set; }

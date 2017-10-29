@@ -9,6 +9,17 @@ namespace Project.UI
     //Admin rukuje korisnicima, namjestajem i podacima o akcijskim prodajama.
     class AdminWindow
     {
+        private static void PrintMainMenu()
+        {
+            Console.WriteLine("=====================");
+            Console.WriteLine("1. Furniture");
+            Console.WriteLine("2. Furniture types");
+            Console.WriteLine("3. Users");
+            Console.WriteLine("4. Action sales");
+            Console.WriteLine("5. Additional services");
+            Console.WriteLine("0. Exit");
+            Console.WriteLine("=====================\n");
+        }
 
         public void StartInteraction()
         {
@@ -17,34 +28,28 @@ namespace Project.UI
 
         private void MainMenu()
         {
+            PrintMainMenu();
             int choice = int.Parse(Console.ReadLine());
-            do
-            {
-                Console.WriteLine("1. Furniture");
-                Console.WriteLine("2. Furniture types");
-                Console.WriteLine("3. Users");
-                Console.WriteLine("4. Action sales");
-                Console.WriteLine("5. Additional services");
-                Console.WriteLine("0. Exit");
-                Console.WriteLine();
-            }
-            while (choice < 0 || choice > 5);
+
+            while (choice < 0 || choice > 5)
+                choice = int.Parse(Console.ReadLine());
+
             switch (choice)
             {
                 case 1:
-                    //FurnitureMenu();
+                    FurnitureMenu();
                     break;
                 case 2:
-                    //FurnitureTypesMenu();
+                    FurnitureTypesMenu();
                     break;
                 case 3:
-                    //UsersMenu();
+                    UsersMenu();
                     break;
                 case 4:
-                    //ActionSalesMenu();
+                    ActionSalesMenu();
                     break;
                 case 5:
-                    //AdditionalServicesMenu();
+                    AdditionalServicesMenu();
                     break;
                 default:
                     Environment.Exit(0);
@@ -54,17 +59,19 @@ namespace Project.UI
 
         private void FurnitureMenu()
         {
+            Console.WriteLine("============================");
+            Console.WriteLine("1. List furniture");
+            Console.WriteLine("2. Add new furniture");
+            Console.WriteLine("3. Edit existing furniture");
+            Console.WriteLine("4. Delete existing furniture");
+            Console.WriteLine("0. Main menu");
+            Console.WriteLine("============================\n");
+
             int choice = int.Parse(Console.ReadLine());
-            do
-            {
-                Console.WriteLine("1. List furniture");
-                Console.WriteLine("2. Add new furniture");
-                Console.WriteLine("3. Edit existing furniture");
-                Console.WriteLine("4. Delete existing furniture");
-                Console.WriteLine("0. Main menu");
-                Console.WriteLine();
-            }
-            while (choice < 0 || choice > 4);
+
+            while (choice < 0 || choice > 4)
+                choice = int.Parse(Console.ReadLine());
+
             switch (choice)
             {
                 case 1:
@@ -87,17 +94,19 @@ namespace Project.UI
 
         private void FurnitureTypesMenu()
         {
+            Console.WriteLine("=================================");
+            Console.WriteLine("1. List furniture types");
+            Console.WriteLine("2. Add new furniture type");
+            Console.WriteLine("3. Edit existing furniture type");
+            Console.WriteLine("4. Delete existing furniture type");
+            Console.WriteLine("0. Main menu");
+            Console.WriteLine("=================================\n");
+
             int choice = int.Parse(Console.ReadLine());
-            do
-            {
-                Console.WriteLine("1. List furniture types");
-                Console.WriteLine("2. Add new furniture type");
-                Console.WriteLine("3. Edit existing furniture type");
-                Console.WriteLine("4. Delete existing furniture type");
-                Console.WriteLine("0. Main menu");
-                Console.WriteLine();
-            }
-            while (choice < 0 || choice > 4);
+
+            while (choice < 0 || choice > 4)
+                choice = int.Parse(Console.ReadLine());
+
             switch (choice)
             {
                 case 1:
@@ -121,17 +130,19 @@ namespace Project.UI
 
         private void UsersMenu()
         {
+            Console.WriteLine("=======================");
+            Console.WriteLine("1. List users");
+            Console.WriteLine("2. Add new user");
+            Console.WriteLine("3. Edit existing user");
+            Console.WriteLine("4. Delete existing user");
+            Console.WriteLine("0. Main menu");
+            Console.WriteLine("=======================\n");
+
             int choice = int.Parse(Console.ReadLine());
-            do
-            {
-                Console.WriteLine("1. List users");
-                Console.WriteLine("2. Add new user");
-                Console.WriteLine("3. Edit existing user");
-                Console.WriteLine("4. Delete existing user");
-                Console.WriteLine("0. Main menu");
-                Console.WriteLine();
-            }
-            while (choice < 0 || choice > 4);
+
+            while (choice < 0 || choice > 4)
+                choice = int.Parse(Console.ReadLine());
+
             switch (choice)
             {
                 case 1:
@@ -154,17 +165,19 @@ namespace Project.UI
 
         private void ActionSalesMenu()
         {
+            Console.WriteLine("==============================");
+            Console.WriteLine("1. List action sales");
+            Console.WriteLine("2. Add new action sales");
+            Console.WriteLine("3. Edit existing action sale");
+            Console.WriteLine("4. Delete existing action sale");
+            Console.WriteLine("0. Main menu");
+            Console.WriteLine("==============================\n");
+
             int choice = int.Parse(Console.ReadLine());
-            do
-            {
-                Console.WriteLine("1. List action sales");
-                Console.WriteLine("2. Add new action sales");
-                Console.WriteLine("3. Edit existing action sale");
-                Console.WriteLine("4. Delete existing action sale");
-                Console.WriteLine("0. Main menu");
-                Console.WriteLine();
-            }
-            while (true);
+
+            while (choice < 0 || choice > 4)
+                choice = int.Parse(Console.ReadLine());
+
             switch (choice)
             {
                 case 1:
@@ -187,17 +200,19 @@ namespace Project.UI
 
         private void AdditionalServicesMenu()
         {
+            Console.WriteLine("=====================================");
+            Console.WriteLine("1. List additional services");
+            Console.WriteLine("2. Add new addition service");
+            Console.WriteLine("3. Edit existing additional service");
+            Console.WriteLine("4. Delete existing additional service");
+            Console.WriteLine("0. Main menu");
+            Console.WriteLine("=====================================\n");
+
             int choice = int.Parse(Console.ReadLine());
-            do
-            {
-                Console.WriteLine("1. List additional services");
-                Console.WriteLine("2. Add new addition service");
-                Console.WriteLine("3. Edit existing additional service");
-                Console.WriteLine("4. Delete existing additional service");
-                Console.WriteLine("0. Main menu");
-                Console.WriteLine();
-            }
-            while (true);
+
+            while (choice < 0 || choice > 4)
+                choice = int.Parse(Console.ReadLine());
+
             switch (choice)
             {
                 case 1:
