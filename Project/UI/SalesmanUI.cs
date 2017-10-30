@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace Project.UI
 {
     //Prodavac rukuje prodajama namjestaja
-    class SalesmanWindow
+    class SalesmanUI
     {
-        public void StartInteraction()
+        public void Run()
         {
             MainMenu();
         }

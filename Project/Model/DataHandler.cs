@@ -12,7 +12,7 @@ namespace Project.Model
     class DataHandler
     {
 
-        public void WriteEntity(Object entity)
+        public void AddEntity(Object entity)
         {
             Type entityType = entity.GetType();
             string fileName;
@@ -51,7 +51,7 @@ namespace Project.Model
             try
             {
                 writer = new XmlSerializer(entityType);
-                path = $@"{Directory.GetCurrentDirectory()}\\..\\..Data\\{fileName}";
+                path = $@"{Directory.GetCurrentDirectory()}\..\..\Data\{fileName}";
                 stream = File.Open(path, FileMode.Append);
 
                 writer.Serialize(stream, entity);
@@ -64,8 +64,8 @@ namespace Project.Model
                 throw;
             }
 
-            }
-
         }
+
     }
+}
 

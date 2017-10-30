@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Project.UI
 {
     //Admin rukuje korisnicima, namjestajem i podacima o akcijskim prodajama.
-    class AdminWindow
+    class AdminUI
     {
         private static void PrintMainMenu()
         {
@@ -21,7 +21,7 @@ namespace Project.UI
             Console.WriteLine("=====================\n");
         }
 
-        public void StartInteraction()
+        public void Run()
         {
             MainMenu();
         }

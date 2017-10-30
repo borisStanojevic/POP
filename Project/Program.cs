@@ -1,5 +1,6 @@
 ﻿using Project.Model;
 using Project.UI;
+using Project.Util;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -14,8 +15,21 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            SalesmanWindow sw = new SalesmanWindow();
-            sw.StartInteraction();
+            //AdminUI adminUI = new AdminUI();
+            //adminUI.Run();
+
+            //SalesmanUI sui = new SalesmanUI();
+            //sui.Run();
+
+            List<User> users = ProjectMain.Instance.Users;
+            //users.add(new User()...);
+            //ProjectMain.Instance.Users = users; upise u fajl
+            foreach (var user in users)
+            {
+                Console.WriteLine(user.Name + user.Surname);
+            }
+
+            Console.ReadLine();
             
 
         }
