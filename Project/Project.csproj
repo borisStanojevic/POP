@@ -44,7 +44,6 @@
   <ItemGroup>
     <Compile Include="Model\ActionSale.cs" />
     <Compile Include="Model\AdditionalService.cs" />
-    <Compile Include="Model\DataHandler.cs" />
     <Compile Include="Model\Furniture.cs" />
     <Compile Include="Model\FurnitureType.cs" />
     <Compile Include="Model\ProjectMain.cs" />
@@ -55,6 +54,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\AdminUI.cs" />
     <Compile Include="UI\SalesmanUI.cs" />
+    <Compile Include="Util\DataHandler.cs" />
     <Compile Include="Util\GenericSerializer.cs" />
   </ItemGroup>
   <ItemGroup>

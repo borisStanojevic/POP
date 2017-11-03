@@ -14,6 +14,6 @@ namespace Project.Model
         public double Price { get; set; }
         public int Quantity { get; set; }
         public FurnitureType Type { get; set; }
-        
+        public bool Deleted { get; set; }
     }
 }

@@ -21,7 +21,7 @@ namespace Project
             //SalesmanUI sui = new SalesmanUI();
             //sui.Run();
 
-            List<User> users = ProjectMain.Instance.Users;
+            List<User> users = ProjectMain.Instance.UsersList;
             //users.add(new User()...);
             //ProjectMain.Instance.Users = users; upise u fajl
             foreach (var user in users)
