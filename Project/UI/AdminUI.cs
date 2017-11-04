@@ -1,5 +1,4 @@
-﻿using Project.Util;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -76,7 +75,7 @@ namespace Project.UI
             switch (choice)
             {
                 case 1:
-                    DataHandler.ListFurniture();
+                    //DataHandler.ListFurniture();
                     break;
                 case 2:
                     //AddFurniture();
@@ -111,7 +110,7 @@ namespace Project.UI
             switch (choice)
             {
                 case 1:
-                    DataHandler.ListFurnitureTypes();
+                    //DataHandler.ListFurnitureTypes();
                     break;
                 case 2:
                     //AddFurnitureType();
@@ -147,7 +146,7 @@ namespace Project.UI
             switch (choice)
             {
                 case 1:
-                    DataHandler.ListUsers();
+                    //DataHandler.ListUsers();
                     break;
                 case 2:
                     //AddUser();
@@ -182,7 +181,7 @@ namespace Project.UI
             switch (choice)
             {
                 case 1:
-                    DataHandler.ListActionSales();
+                    //DataHandler.ListActionSales();
                     break;
                 case 2:
                     //AddActionSale();
@@ -217,7 +216,7 @@ namespace Project.UI
             switch (choice)
             {
                 case 1:
-                    DataHandler.ListAdditionalServices();
+                    //DataHandler.ListAdditionalServices();
                     break;
                 case 2:
                     //AddAdditionalService();

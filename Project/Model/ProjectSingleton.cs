@@ -9,6 +9,7 @@ namespace Project.Model
 {
     public class ProjectSingleton
     {
+        /*
         public static ProjectSingleton Instance { get; } = new ProjectSingleton();
         private List<User> usersList;
         private List<Sale> salesList;
@@ -103,5 +104,6 @@ namespace Project.Model
                 GenericSerializer.Serialize<ActionSale>("action_sales.xml", this.actionSalesList);
             }
         }
+        */
     }
 }

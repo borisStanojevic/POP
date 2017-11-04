@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
 
-namespace Project.Util
+namespace Project.DAO
 {
     //Pretraga, logovanje, upis datoteke
     public class GenericSerializer

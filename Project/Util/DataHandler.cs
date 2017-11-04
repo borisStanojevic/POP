@@ -9,36 +9,10 @@ namespace Project.Util
 {
     class DataHandler
     {
-        //Kreiranje genericke metode za dobavljanje entiteta po id-u (istovremeno provjera postojanja)
-        public static T GetEntity<T>(int id, List<T> entitiesList)
-        {
-            foreach (T item in entitiesList)
-            {
-                int itemId = (int)item.GetType().GetProperty("Id").GetValue(item, null);
-                if (itemId == id)
-                {
-                    return item;
-                }
-            }
-            return default(T);
-        }
 
-        public static bool AddEntity<T>(T entity, string fileName)
-        {
-            List<T> entitesList = GenericSerializer.Deserialize<T>(fileName);
-            /*Upotrebom refleksije, za vrijeme runtime-a, dobavljam vrijednost svojstva Id proslijedjenog objekta
-              jer znam da ce svaki entitet u mom modelu imati Id.
-             */
-            int entityId = (int)entity.GetType().GetProperty("Id").GetValue(entity, null);
-            if (GetEntity<T>(entityId, entitesList) != null)
-            {
-                return false;
-            }
-            entitesList.Add(entity);
-            GenericSerializer.Serialize<T>(fileName, entitesList);
-            return true;
-        }
 
+
+        /*
         public static void ListEntities<T>(List<T> entitiesList)
         {
             entitiesList.ForEach(i => Console.WriteLine(i.ToString()));
@@ -125,5 +99,6 @@ namespace Project.Util
         // Dodati AddActionSale()
 
         //Dodati AddSale()
+        */
     }
 }

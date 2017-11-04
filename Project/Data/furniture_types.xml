@@ -8,6 +8,11 @@
   <FurnitureType>
     <Id>2</Id>
     <Name>Ormar</Name>
+    <Deleted>true</Deleted>
+  </FurnitureType>
+  <FurnitureType>
+    <Id>3</Id>
+    <Name>Luster</Name>
     <Deleted>false</Deleted>
   </FurnitureType>
 </ArrayOfFurnitureType>

@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\EntityDAO.cs" />
     <Compile Include="Model\ActionSale.cs" />
     <Compile Include="Model\AdditionalService.cs" />
     <Compile Include="Model\Furniture.cs" />
@@ -55,14 +56,18 @@
     <Compile Include="UI\AdminUI.cs" />
     <Compile Include="UI\SalesmanUI.cs" />
     <Compile Include="Util\DataHandler.cs" />
-    <Compile Include="Util\GenericSerializer.cs" />
+    <Compile Include="DAO\GenericSerializer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Content Include="Data\action_sales.xml" />
+    <Content Include="Data\additional_services.xml" />
+    <Content Include="Data\furniture.xml" />
     <Content Include="Data\furniture_types.xml" />
+    <Content Include="Data\sales.xml" />
     <Content Include="Data\users.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
