@@ -15,5 +15,10 @@ namespace Project.Model
         public int Quantity { get; set; }
         public FurnitureType Type { get; set; }
         public bool Deleted { get; set; }
+
+        public override string ToString()
+        {
+            return String.Format("{0,-5}|{1,-15}|{2,-10}|{3,-5}|{4,-5}|{5,-5}", Id, Name, Price, Quantity, Type.Id, Deleted);
+        }
     }
 }

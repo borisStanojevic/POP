@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Project.Model
 {
-    public class ProjectMain
+    public class ProjectSingleton
     {
-        public static ProjectMain Instance { get; } = new ProjectMain();
+        public static ProjectSingleton Instance { get; } = new ProjectSingleton();
         private List<User> usersList;
         private List<Sale> salesList;
         private List<FurnitureType> furnitureTypesList;
@@ -103,6 +103,5 @@ namespace Project.Model
                 GenericSerializer.Serialize<ActionSale>("action_sales.xml", this.actionSalesList);
             }
         }
-        //Za svaki entitet...
     }
 }

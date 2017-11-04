@@ -22,5 +22,11 @@ namespace Project.Model
         public string Password { get; set; }
         public TypeOfUser UserType { get; set; }
         public bool Deleted { get; set; }
+
+        public override string ToString()
+        {
+            return String.Format("{0,-5}|{1,-10}|{2,-15}|{3,-15}|{4,-15}|{5,-18}|{6,-5}",Id, Name, Surname, Username, Password, UserType, Deleted);
+        }
     }
 }
+

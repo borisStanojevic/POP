@@ -13,5 +13,10 @@ namespace Project.Model
         public string Name { get; set; }
         public double Price { get; set; }
         public bool Deleted { get; set; }
+
+        public override string ToString()
+        {
+            return String.Format("{0,-5}|{1,-15}|{2,-10}|{3,-6}", Id, Name, Price, Deleted);
+        }
     }
 }

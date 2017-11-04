@@ -46,7 +46,7 @@
     <Compile Include="Model\AdditionalService.cs" />
     <Compile Include="Model\Furniture.cs" />
     <Compile Include="Model\FurnitureType.cs" />
-    <Compile Include="Model\ProjectMain.cs" />
+    <Compile Include="Model\ProjectSingleton.cs" />
     <Compile Include="Model\Sale.cs" />
     <Compile Include="Model\Store.cs" />
     <Compile Include="Model\User.cs" />
