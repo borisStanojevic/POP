@@ -15,12 +15,6 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            AdminUI adminUI = new AdminUI();
-            adminUI.Run();
-
-     
-            Console.ReadLine();
         }
-
     }
 }

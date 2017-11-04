@@ -23,6 +23,27 @@ namespace Project.Util
             return default(T);
         }
 
+        public static bool AddEntity<T>(T entity, string fileName)
+        {
+            List<T> entitesList = GenericSerializer.Deserialize<T>(fileName);
+            /*Upotrebom refleksije, za vrijeme runtime-a, dobavljam vrijednost svojstva Id proslijedjenog objekta
+              jer znam da ce svaki entitet u mom modelu imati Id.
+             */
+            int entityId = (int)entity.GetType().GetProperty("Id").GetValue(entity, null);
+            if (GetEntity<T>(entityId, entitesList) != null)
+            {
+                return false;
+            }
+            entitesList.Add(entity);
+            GenericSerializer.Serialize<T>(fileName, entitesList);
+            return true;
+        }
+
+        public static void ListEntities<T>(List<T> entitiesList)
+        {
+            entitiesList.ForEach(i => Console.WriteLine(i.ToString()));
+        }
+
         public static void ListUsers()
         {
             ProjectSingleton.Instance.UsersList.ForEach(i => Console.WriteLine(i.ToString()));

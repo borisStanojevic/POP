@@ -11,7 +11,7 @@ namespace Project.Util
     //Pretraga, logovanje, upis datoteke
     public class GenericSerializer
     {
-        public static void Serialize<T>(string fileName, List<T> objToSerialize) where T : class
+        public static void Serialize<T>(string fileName, List<T> objToSerialize)
         {
             try
             {
@@ -28,7 +28,7 @@ namespace Project.Util
             }
         }
 
-        public static List<T> Deserialize<T>(string fileName) where T : class
+        public static List<T> Deserialize<T>(string fileName)
         {
             try
             {

@@ -62,11 +62,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Content Include="Data\action_sales.xml" />
-    <Content Include="Data\additional_services.xml" />
-    <Content Include="Data\furniture.xml" />
     <Content Include="Data\furniture_types.xml" />
-    <Content Include="Data\sales.xml" />
     <Content Include="Data\users.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
