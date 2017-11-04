@@ -9,6 +9,21 @@ namespace Project.Util
 {
     class DataHandler
     {
+
+        //Kreiranje genericke metode za dobavljanje entiteta po id-u (istovremeno provjera postojanja)
+        public static T GetEntity<T>(int id, List<T> entitiesList)
+        {
+            foreach (T item in entitiesList)
+            {
+                int itemId = (int) item.GetType().GetProperty("Id").GetValue(item, null);
+                if (itemId == id)
+                {
+                    return item;
+                }
+            }
+            return default(T);
+        }
+        
         public static User GetUser(int id)
         {
             foreach (var item in ProjectMain.Instance.UsersList)

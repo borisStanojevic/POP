@@ -21,17 +21,26 @@ namespace Project
             //SalesmanUI sui = new SalesmanUI();
             //sui.Run();
 
-            List<User> users = ProjectMain.Instance.UsersList;
+            //List<User> users = ProjectMain.Instance.UsersList;
             //users.add(new User()...);
             //ProjectMain.Instance.Users = users; upise u fajl
-            foreach (var user in users)
-            {
+            //foreach (var user in users)
+            /*{
                 Console.WriteLine(user.Name + user.Surname);
             }
 
             Console.ReadLine();
-            
+            */
 
+            if (DataHandler.GetEntity<User>(1, ProjectMain.Instance.UsersList) == null)
+            {
+                Console.WriteLine("Nema");
+            }
+            else
+            {
+                Console.WriteLine("Ima");
+            }
+            Console.ReadLine();
         }
 
     }
