@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project.DAO;
+using Project.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -75,7 +77,11 @@ namespace Project.UI
             switch (choice)
             {
                 case 1:
-                    //DataHandler.ListFurniture();
+                    List<Furniture> allFurniture = new EntityDAO<Furniture>("furniture.xml").GetAll();
+                    foreach (var item in allFurniture)
+                    {
+                        Console.WriteLine(item.ToString());
+                    }
                     break;
                 case 2:
                     //AddFurniture();
@@ -110,7 +116,11 @@ namespace Project.UI
             switch (choice)
             {
                 case 1:
-                    //DataHandler.ListFurnitureTypes();
+                    List<FurnitureType> allFurnitureTypes = new EntityDAO<FurnitureType>("furniture_types.xml").GetAll();
+                    foreach (var item in allFurnitureTypes)
+                    {
+                        Console.WriteLine(item.ToString());
+                    }
                     break;
                 case 2:
                     //AddFurnitureType();
@@ -146,7 +156,11 @@ namespace Project.UI
             switch (choice)
             {
                 case 1:
-                    //DataHandler.ListUsers();
+                    List<User> allUsers = new EntityDAO<User>("users.xml").GetAll();
+                    foreach (var item in allUsers)
+                    {
+                        Console.WriteLine(item.ToString());
+                    }
                     break;
                 case 2:
                     //AddUser();
@@ -181,7 +195,11 @@ namespace Project.UI
             switch (choice)
             {
                 case 1:
-                    //DataHandler.ListActionSales();
+                    List<ActionSale> allActionSales = new EntityDAO<ActionSale>("action_sales.xml").GetAll();
+                    foreach (var item in allActionSales)
+                    {
+                        Console.WriteLine(item.ToString());
+                    }
                     break;
                 case 2:
                     //AddActionSale();
@@ -216,7 +234,11 @@ namespace Project.UI
             switch (choice)
             {
                 case 1:
-                    //DataHandler.ListAdditionalServices();
+                    List<AdditionalService> allAdditionalServices = new EntityDAO<AdditionalService>("additional_services.xml").GetAll();
+                    foreach (var item in allAdditionalServices)
+                    {
+                        Console.WriteLine(item.ToString());
+                    }
                     break;
                 case 2:
                     //AddAdditionalService();

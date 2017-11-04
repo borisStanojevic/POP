@@ -16,19 +16,11 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            EntityDAO<FurnitureType> ed = new EntityDAO<FurnitureType>("furniture_types.xml");
-            ed.Add(new FurnitureType()
-            {
-                Id = 3,
-                Name = "Luster",
-                Deleted = false
-            });
-            foreach (var item in ed.GetAll())
-            {
-                Console.WriteLine(item.ToString());
-            }
+            AdminUI a = new AdminUI();
+            a.Run();
 
             Console.ReadLine();
+            
         }
     }
 }
