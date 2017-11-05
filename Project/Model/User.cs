@@ -8,8 +8,8 @@ namespace Project.Model
 {
     public enum TypeOfUser
     {
-        Admin,
-        Salesman
+        Admin = 1,
+        Salesman = 2
     }
 
     [Serializable]

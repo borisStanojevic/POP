@@ -8,7 +8,6 @@ using System.Xml.Serialization;
 
 namespace Project.DAO
 {
-    //Pretraga, logovanje, upis datoteke
     public class GenericSerializer
     {
         public static void Serialize<T>(string fileName, List<T> objToSerialize)

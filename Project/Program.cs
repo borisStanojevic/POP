@@ -16,9 +16,18 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            AdminUI a = new AdminUI();
-            a.Run();
-
+            TypeOfUser userType = Login.DoLogin();
+            if(userType != default(TypeOfUser))
+            {
+                if (userType.Equals(TypeOfUser.Admin))
+                {
+                    new AdminUI().Run();
+                }
+                else
+                {
+                    new SalesmanUI().Run();
+                }
+            }
             Console.ReadLine();
             
         }

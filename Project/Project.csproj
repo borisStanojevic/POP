@@ -54,6 +54,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\AdminUI.cs" />
+    <Compile Include="UI\Login.cs" />
     <Compile Include="UI\SalesmanUI.cs" />
     <Compile Include="Util\DataHandler.cs" />
     <Compile Include="DAO\GenericSerializer.cs" />
