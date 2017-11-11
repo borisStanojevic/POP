@@ -28,6 +28,8 @@ namespace MyApplication
             InitializeComponent();
 
             Refresh();
+
+            new LoginWindow().Show();
         }
 
         private void Refresh()

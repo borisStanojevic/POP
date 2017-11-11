@@ -1,0 +1,26 @@
+﻿<Window x:Class="MyApplication.UI.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyApplication.UI"
+        mc:Ignorable="d"
+        Title="LoginWindow" Height="280.335" Width="452.744" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Background="MintCream" Margin="0,0,0.4,-4.6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="134*"/>
+            <ColumnDefinition Width="275*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="67*"/>
+            <RowDefinition Height="97*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Username :" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,32,0,0" VerticalAlignment="Top" Width="125" FontWeight="Bold" FontSize="14"/>
+        <Label Content="Password :" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="10,30.8,0,0" VerticalAlignment="Top" Width="125" Grid.Row="1" FontWeight="Bold" FontSize="14"/>
+        <TextBox x:Name="tbUsername" AcceptsReturn="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" BorderThickness="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="6.2,30,0,12.8" VerticalAlignment="Center" Width="259" Grid.Column="1" FontSize="14" Height="30"/>
+        <Button x:Name="btnLogin" Content="Log in" HorizontalAlignment="Left" Height="45" Margin="5.2,42.4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="150" Grid.Column="1" RenderTransformOrigin="0.525,1.558" FontSize="14" FontWeight="Bold" Click="Login"/>
+        <PasswordBox x:Name="pbPassword" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Disabled" Grid.Column="1" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" HorizontalAlignment="Left" Margin="6.2,29.2,0,12.8" Grid.Row="1" VerticalAlignment="Center" Width="259" Height="30" FontSize="14"/>
+        <TextBlock x:Name="tbMessage"  Grid.Column="1" HorizontalAlignment="Left" Height="18" Margin="6.2,10.2,0,0" Grid.Row="2" TextWrapping="Wrap" VerticalAlignment="Top" Width="259" Visibility="Hidden"/>
+    </Grid>
+</Window>

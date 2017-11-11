@@ -15,3 +15,5 @@ C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyA
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.csproj.CoreCompileInputs.cache
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.exe
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.pdb
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\LoginWindow.g.cs
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\LoginWindow.baml

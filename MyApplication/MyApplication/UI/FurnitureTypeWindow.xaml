@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyApplication.UI"
         mc:Ignorable="d"
-        Title="FurnitureTypeWindow" Height="363.17" Width="464.542">
-    <Grid Margin="-12,0,0.4,118.6">
+        Title="FurnitureTypeWindow" Height="300" Width="400">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="8*"/>

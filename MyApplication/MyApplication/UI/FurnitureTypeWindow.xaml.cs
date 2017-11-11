@@ -35,6 +35,8 @@ namespace MyApplication.UI
         {
 
             InitializeComponent();
+            this.SizeToContent = SizeToContent.WidthAndHeight;
+            this.ResizeMode = ResizeMode.NoResize;
             InititalizeValues(furnitureType);
         }
 
