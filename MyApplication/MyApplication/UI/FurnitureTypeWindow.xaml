@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyApplication.UI"
         mc:Ignorable="d"
-        Title="FurnitureTypeWindow" Height="353.39" Width="578.644">
-    <Grid>
+        Title="FurnitureTypeWindow" Height="363.17" Width="464.542">
+    <Grid Margin="-12,0,0.4,118.6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="3*"/>
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="38*"/>
-            <RowDefinition Height="36*"/>
-            <RowDefinition Height="35*"/>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="175*"/>
+            <RowDefinition Height="41*"/>
+            <RowDefinition Height="42*"/>
+            <RowDefinition Height="126*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="0" Grid.Column="0" Content="Id&#xD;&#xA;" HorizontalAlignment="Left" Width="50" Grid.RowSpan="5"/>
-        <TextBox Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" Name="tbName"/>
-        
+        <Label x:Name="lblId" Grid.Row="0" Grid.Column="0" Content="ID" HorizontalAlignment="Center" Margin="51,4,51.8,11.8" FontWeight="Bold" Width="22" VerticalAlignment="Center" Height="25"/>
+        <TextBox Padding="0" BorderThickness="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Grid.Row="0" Width="312" Grid.Column="1" HorizontalAlignment="Center" Name="tbId" Margin="11.2,2,9.6,10.8" Height="28" VerticalAlignment="Center"/>
+        <Label x:Name="lblName" Grid.Column="0" Content="Name" HorizontalAlignment="Center" Margin="41,8.2,40.8,8.2" FontWeight="Bold" Width="43" VerticalAlignment="Center" Height="26" Grid.Row="1"/>
+        <TextBox Padding="0" BorderThickness="1" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Width="312" Grid.Column="1" x:Name="tbName" Margin="10.2,8.2,10.6,6.2" Height="28" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <Button Content="Button" Grid.Column="1" HorizontalAlignment="Left" Height="35" Margin="10,38.4,0,0" Grid.Row="2" VerticalAlignment="Top" Width="78"/>
     </Grid>
 </Window>

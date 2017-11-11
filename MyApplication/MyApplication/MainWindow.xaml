@@ -5,15 +5,62 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="23*"/>
-            <RowDefinition Height="7*"/>
-        </Grid.RowDefinitions>
-        <ListBox Name="lbUsers" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,-0.4,132.4" Grid.RowSpan="2"></ListBox>
-        <Button Name="btnAdd" Height="30" Grid.Row="1" Margin="33,50.4,680.6,52.4" Click="btnAdd_Click">Add</Button>
-        <Button Name="btnEdit" Height="30" Grid.Row="1" Margin="146,50.4,567.6,52.4" Click="btnEdit_Click">Edit</Button>
-        <Button Name="btnExit" Height="30" Grid.Row="1" Margin="675,50.4,38.6,52.4" Click="btnExit_Click">Exit</Button>
-    </Grid>
+        Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize">
+    <TabControl>
+        <TabItem Header="Users">
+            <Grid Background="#FFE5E5E5" Width="800">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="431*"/>
+                    <RowDefinition Height="110*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnAddUser" Content="Add" HorizontalAlignment="Left" Height="47" Margin="10,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="141" Click="AddUser"/>
+                <Button x:Name="btnEditUser" Content="Edit" HorizontalAlignment="Left" Height="47" Margin="199,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142"/>
+                <ListBox Name="lbUsers" Height="426" Width="780" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Furniture types">
+            <Grid Width="800">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="431*"/>
+                    <RowDefinition Height="110*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnAddFurnitureType" Content="Add" HorizontalAlignment="Left" Height="47" Margin="10,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="141" Click="AddFurnitureType"/>
+                <Button x:Name="btnEditFurnitureType" Content="Edit" HorizontalAlignment="Left" Height="47" Margin="199,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142"/>
+                <ListBox Name="lbFurnitureTypes" Height="426" Width="780" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Furniture">
+            <Grid Background="#FFE5E5E5" Width="800">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="431*"/>
+                    <RowDefinition Height="110*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnAddFurniture" Content="Add" HorizontalAlignment="Left" Height="47" Margin="10,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="141" Click="AddFurniture"/>
+                <Button x:Name="btnEditFurniture" Content="Edit" HorizontalAlignment="Left" Height="47" Margin="199,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142"/>
+                <ListBox Name="lbFurniture" Height="426" Width="780" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Additional services">
+            <Grid Background="#FFE5E5E5" Width="800">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="431*"/>
+                    <RowDefinition Height="110*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnAddAdditionalService" Content="Add" HorizontalAlignment="Left" Height="47" Margin="10,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="141" Click="AddAdditionalService"/>
+                <Button x:Name="btnEditAdditionalService" Content="Edit" HorizontalAlignment="Left" Height="47" Margin="199,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142"/>
+                <ListBox Name="lbAdditionalServices" Height="426" Width="780" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Action sales">
+            <Grid Background="#FFE5E5E5" Width="800">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="431*"/>
+                    <RowDefinition Height="110*"/>
+                </Grid.RowDefinitions>
+                <Button x:Name="btnAddActionSale" Content="Add" HorizontalAlignment="Left" Height="47" Margin="10,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="141" Click="AddActionSale"/>
+                <Button x:Name="btnEditActionSale" Content="Edit" HorizontalAlignment="Left" Height="47" Margin="199,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142"/>
+                <ListBox Name="lbActionSales" Height="426" Width="780" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            </Grid>
+        </TabItem>
+    </TabControl>
 </Window>

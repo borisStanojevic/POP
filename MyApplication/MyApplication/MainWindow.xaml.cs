@@ -32,34 +32,37 @@ namespace MyApplication
 
         private void Refresh()
         {
-            lbUsers.Items.Clear();
+            //lbUsers.Items.Clear();
 
-            foreach (var item in new EntityDAO<FurnitureType>("furniture_types.xml").GetAll())
+            foreach (FurnitureType item in new EntityDAO<FurnitureType>("furniture_types.xml").GetAll())
             {
-                lbUsers.Items.Add(item);
+                lbFurnitureTypes.Items.Add(item);
             }
-
-            lbUsers.SelectedValue = 0;
         }
 
-        private void btnExit_Click(object sender, RoutedEventArgs e)
+        private void AddUser(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            MessageBox.Show("Add user");
         }
 
-        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        private void AddFurnitureType(object sender, RoutedEventArgs e)
         {
-            var furnitureTypeWindow = new FurnitureTypeWindow(null);
-          
-
-            furnitureTypeWindow.ShowDialog();
+            new FurnitureTypeWindow(lbFurnitureTypes.SelectedItem as FurnitureType, FurnitureTypeWindow.Mode.ADD).Show();
         }
 
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        private void AddFurniture(object sender, RoutedEventArgs e)
         {
-            var furnitureType = (FurnitureType)lbUsers.SelectedItem;
-            var furnitureTypeWindow = new FurnitureTypeWindow(furnitureType);
+            MessageBox.Show("Add furniture");
+        }
 
+        private void AddAdditionalService(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Add as");
+        }
+
+        private void AddActionSale(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("add action sale");
         }
     }
 }

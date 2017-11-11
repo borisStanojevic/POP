@@ -28,9 +28,10 @@ namespace MyApplication.UI
             EDIT
         }
 
+        private FurnitureType furnitureType;
         private Mode mode;
 
-        public FurnitureTypeWindow(FurnitureType furnitureType)
+        public FurnitureTypeWindow(FurnitureType furnitureType, Mode mode)
         {
 
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace MyApplication.UI
 
         private void InititalizeValues(FurnitureType furnitureType)
         {
-            tbName.Text = furnitureType.Name;
+            MessageBox.Show(furnitureType.ToString());
         }
 
         private void SaveChanges(object sender, RoutedEventArgs e)
@@ -51,7 +52,6 @@ namespace MyApplication.UI
                 case Mode.ADD:
                     var newFurnitureType = new FurnitureType()
                     {
-                        Name = tbName.Text
                     };
                     new EntityDAO<FurnitureType>("furniture_types.xml").Add(newFurnitureType);
                     break;
@@ -59,7 +59,6 @@ namespace MyApplication.UI
                     break;
             }
         }
-
 
     }
 }
