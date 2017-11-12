@@ -33,34 +33,26 @@ namespace MyApplication.UI
 
         public FurnitureTypeWindow(FurnitureType furnitureType, Mode mode)
         {
+            this.furnitureType = furnitureType;
+            this.mode = mode;
 
             InitializeComponent();
-            this.SizeToContent = SizeToContent.WidthAndHeight;
-            this.ResizeMode = ResizeMode.NoResize;
-            InititalizeValues(furnitureType);
+            if (furnitureType != null && mode.Equals(Mode.EDIT))
+                InititalizeValues(furnitureType);
         }
 
         private void InititalizeValues(FurnitureType furnitureType)
         {
-            MessageBox.Show(furnitureType.ToString());
+            tbId.Text = furnitureType.Id.ToString();
+            tbId.IsReadOnly = true;
+            tbName.Text = furnitureType.Name;
+            cbDeleted.IsChecked = furnitureType.Deleted ? true : false;
+
         }
 
-        private void SaveChanges(object sender, RoutedEventArgs e)
+        private void CloseWindow(object sender, RoutedEventArgs e)
         {
-            List<FurnitureType> existingFurnitureType = new EntityDAO<FurnitureType>("furniture_type.xml").GetAll();
-
-            switch (mode)
-            {
-                case Mode.ADD:
-                    var newFurnitureType = new FurnitureType()
-                    {
-                    };
-                    new EntityDAO<FurnitureType>("furniture_types.xml").Add(newFurnitureType);
-                    break;
-                default:
-                    break;
-            }
+            this.Close();
         }
-
     }
 }

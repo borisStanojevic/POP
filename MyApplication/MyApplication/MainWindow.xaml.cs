@@ -28,8 +28,6 @@ namespace MyApplication
             InitializeComponent();
 
             Refresh();
-
-            new LoginWindow().Show();
         }
 
         private void Refresh()
@@ -49,7 +47,7 @@ namespace MyApplication
 
         private void AddFurnitureType(object sender, RoutedEventArgs e)
         {
-            new FurnitureTypeWindow(lbFurnitureTypes.SelectedItem as FurnitureType, FurnitureTypeWindow.Mode.ADD).Show();
+            new FurnitureTypeWindow(lbFurnitureTypes.SelectedItem as FurnitureType, FurnitureTypeWindow.Mode.EDIT).Show();
         }
 
         private void AddFurniture(object sender, RoutedEventArgs e)

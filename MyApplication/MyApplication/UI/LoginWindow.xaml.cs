@@ -46,7 +46,7 @@ namespace MyApplication.UI
                 tbMessage.Text = "User not found";
                 tbMessage.FontWeight = FontWeights.Bold;
                 tbMessage.Foreground = new SolidColorBrush(Colors.Red);
-                
+
             }
             else
             {
@@ -55,6 +55,7 @@ namespace MyApplication.UI
                 {
                     case TypeOfUser.Admin:
                         new MainWindow().Show();
+                        this.Close();
                         break;
                     case TypeOfUser.Salesman:
                         MessageBox.Show("SalesmanWindow not implemented yet");

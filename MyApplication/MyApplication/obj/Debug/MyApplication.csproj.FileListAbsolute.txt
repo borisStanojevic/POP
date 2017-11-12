@@ -1,5 +1,6 @@
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MainWindow.g.cs
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\FurnitureTypeWindow.g.cs
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\LoginWindow.g.cs
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\App.g.cs
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication_MarkupCompile.cache
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication_MarkupCompile.lref
@@ -9,11 +10,10 @@ C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\bin\Debug\MyA
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.csprojResolveAssemblyReference.cache
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MainWindow.baml
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\FurnitureTypeWindow.baml
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\LoginWindow.baml
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.g.resources
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.Properties.Resources.resources
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.csproj.GenerateResource.Cache
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.csproj.CoreCompileInputs.cache
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.exe
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.pdb
-C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\LoginWindow.g.cs
-C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\LoginWindow.baml
