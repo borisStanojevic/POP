@@ -46,7 +46,6 @@ namespace MyApplication.UI
                 tbMessage.Text = "User not found";
                 tbMessage.FontWeight = FontWeights.Bold;
                 tbMessage.Foreground = new SolidColorBrush(Colors.Red);
-
             }
             else
             {

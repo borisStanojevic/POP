@@ -27,18 +27,20 @@ namespace MyApplication.UI
             ADD,
             EDIT
         }
-
         private FurnitureType furnitureType;
         private Mode mode;
 
-        public FurnitureTypeWindow(FurnitureType furnitureType, Mode mode)
+        public FurnitureTypeWindow(FurnitureType furnitureType, Mode mode = Mode.ADD)
         {
             this.furnitureType = furnitureType;
             this.mode = mode;
 
             InitializeComponent();
             if (furnitureType != null && mode.Equals(Mode.EDIT))
+            {
                 InititalizeValues(furnitureType);
+                btnAddEdit.Content = "Edit";
+            }
         }
 
         private void InititalizeValues(FurnitureType furnitureType)

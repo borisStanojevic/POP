@@ -57,6 +57,9 @@
     <Compile Include="UI\FurnitureTypeWindow.xaml.cs">
       <DependentUpon>FurnitureTypeWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\FurnitureWindow.xaml.cs">
+      <DependentUpon>FurnitureWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
     </Compile>
@@ -76,6 +79,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UI\FurnitureTypeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\FurnitureWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

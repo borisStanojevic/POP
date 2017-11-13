@@ -6,12 +6,9 @@ using System.Threading.Tasks;
 
 namespace MyApplication.Model
 {
-
-
     [Serializable]
     public class ActionSale
     {
-
         public int Id { get; set; }
         public double Discount { get; set; }
         public DateTime StartDate { get; set; }

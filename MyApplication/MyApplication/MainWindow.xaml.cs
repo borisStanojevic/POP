@@ -26,18 +26,19 @@ namespace MyApplication
         public MainWindow()
         {
             InitializeComponent();
-
-            Refresh();
+            RefreshFurnitureTypes();
         }
 
-        private void Refresh()
+        private void RefreshFurnitureTypes()
         {
             //lbUsers.Items.Clear();
 
             foreach (FurnitureType item in new EntityDAO<FurnitureType>("furniture_types.xml").GetAll())
             {
-                lbFurnitureTypes.Items.Add(item);
+                if (item.Deleted == false)
+                    lbFurnitureTypes.Items.Add(item);
             }
+            lbFurnitureTypes.SelectedIndex = 0;
         }
 
         private void AddUser(object sender, RoutedEventArgs e)
@@ -47,7 +48,7 @@ namespace MyApplication
 
         private void AddFurnitureType(object sender, RoutedEventArgs e)
         {
-            new FurnitureTypeWindow(lbFurnitureTypes.SelectedItem as FurnitureType, FurnitureTypeWindow.Mode.EDIT).Show();
+            new FurnitureTypeWindow(null).ShowDialog();
         }
 
         private void AddFurniture(object sender, RoutedEventArgs e)
@@ -63,6 +64,21 @@ namespace MyApplication
         private void AddActionSale(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("add action sale");
+        }
+
+        private void EditFurnitureType(object sender, RoutedEventArgs e)
+        {
+            new FurnitureTypeWindow(lbFurnitureTypes.SelectedItem as FurnitureType, FurnitureTypeWindow.Mode.EDIT).ShowDialog();
+        }
+
+        private void DeleteFurnitureType(object sender, RoutedEventArgs e)
+        {
+            FurnitureType furnitureType = (FurnitureType)lbFurnitureTypes.SelectedItem;
+            if (MessageBox.Show($"Are you sure you want to delete : {furnitureType.Name} ?", "Deleting", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                new EntityDAO<FurnitureType>("furniture_types.xml").DeleteEntity(furnitureType.Id);
+                RefreshFurnitureTypes();
+            }
         }
     }
 }

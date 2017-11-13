@@ -13,6 +13,6 @@
   <FurnitureType>
     <Id>3</Id>
     <Name>Luster</Name>
-    <Deleted>false</Deleted>
+    <Deleted>true</Deleted>
   </FurnitureType>
 </ArrayOfFurnitureType>
