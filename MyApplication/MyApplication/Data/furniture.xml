@@ -2,16 +2,30 @@
 <ArrayOfFurniture xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Furniture>
     <Id>1</Id>
-    <Name>Bracni krever</Name>
-    <Price>12221</Price>
-    <Quantity>5</Quantity>
+    <Name>Bracni krevet</Name>
+    <Price>12222</Price>
+    <Quantity>3</Quantity>
     <TypeId>1</TypeId>
-    <action>
+    <Action>
       <Id>0</Id>
       <Discount>0</Discount>
       <StartDate>0001-01-01T00:00:00</StartDate>
       <EndDate>0001-01-01T00:00:00</EndDate>
-    </action>
+    </Action>
+    <Deleted>false</Deleted>
+  </Furniture>
+  <Furniture>
+    <Id>2</Id>
+    <Name>Neki ormar</Name>
+    <Price>23113</Price>
+    <Quantity>5</Quantity>
+    <TypeId>3</TypeId>
+    <Action>
+      <Id>0</Id>
+      <Discount>0</Discount>
+      <StartDate>0001-01-01T00:00:00</StartDate>
+      <EndDate>0001-01-01T00:00:00</EndDate>
+    </Action>
     <Deleted>false</Deleted>
   </Furniture>
 </ArrayOfFurniture>

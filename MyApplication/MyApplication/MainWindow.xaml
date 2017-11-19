@@ -5,70 +5,69 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyApplication"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <TabControl>
-        <TabItem Header="Users" RenderTransformOrigin="0.5,0.507" Height="26" Margin="-2,-2,-2.2,0" VerticalAlignment="Bottom">
-            <Grid Background="MintCream" Width="800">
+        Title="MainWindow" Height="600" Width="800" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+    <TabControl HorizontalAlignment="Left" Height="569" VerticalAlignment="Top" Width="790"  SelectedIndex="0">
+        <TabItem Header="Users" Height="24" Margin="-2,-2,-2.2,0" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.5">
+            <Grid Margin="0,0,-6.2,-1.2">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="431*"/>
-                    <RowDefinition Height="110*"/>
+                    <RowDefinition Height="434*"/>
+                    <RowDefinition Height="103*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnAddUser" Content="Add" HorizontalAlignment="Left" Height="47" Margin="10,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Click="AddUser"/>
-                <Button x:Name="btnEditUser" Content="Edit" HorizontalAlignment="Left" Height="47" Margin="199,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Click="btnEditUser_Click"/>
-                <ListBox Name="lbUsers" Height="426" Width="780" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Button x:Name="btnDeleteUser" Content="Delete" HorizontalAlignment="Left" Margin="390,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Height="47" RenderTransformOrigin="1.074,0.63"/>
+                <DataGrid x:Name="dgUsers" Margin="0,0,0,0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="791" SelectedIndex="0"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="29,26.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="45"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="205,26.6,0,0" Grid.Row="1" Height="45"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45"/>
             </Grid>
         </TabItem>
-        <TabItem Header="Furniture types" Margin="-1.8,-2,-2,1.6">
-            <Grid Background="MintCream" Width="800">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
+        <TabItem Header="Furniture types" Margin="-1.8,-2,-2,2" RenderTransformOrigin="0.502,0.5">
+            <Grid Margin="0,0,-6.2,-1.2">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="431*"/>
-                    <RowDefinition Height="110*"/>
+                    <RowDefinition Height="434*"/>
+                    <RowDefinition Height="103*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnAddFurnitureType" Content="Add" HorizontalAlignment="Left" Height="47" Margin="10,35.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Click="AddFurnitureType"/>
-                <Button x:Name="btnEditFurnitureType" Content="Edit" HorizontalAlignment="Left" Height="47" Margin="199,35.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Click="EditFurnitureType"/>
-                <ListBox Name="lbFurnitureTypes" Height="426" Width="780" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Button x:Name="btnDeleteFurnitureType" Content="Delete" HorizontalAlignment="Left" Height="47" Margin="390,35.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Click="DeleteFurnitureType"/>
+                <DataGrid x:Name="dgFurnitureTypes" Margin="0,0,0,0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="791" SelectedIndex="0"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="29,26.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="45"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="205,26.6,0,0" Grid.Row="1" Height="45"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45"/>
             </Grid>
         </TabItem>
-        <TabItem Header="Furniture" Height="22" VerticalAlignment="Top" Margin="-2,0">
-            <Grid Background="MintCream" Width="800">
+        <TabItem Header="Furniture" Height="24" Margin="-2,-2,-2.2,0" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.5">
+            <Grid Margin="0,0,-6.2,-1.2">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="431*"/>
-                    <RowDefinition Height="110*"/>
+                    <RowDefinition Height="434*"/>
+                    <RowDefinition Height="103*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnAddFurniture" Content="Add" HorizontalAlignment="Left" Height="47" Margin="10,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Click="AddFurniture"/>
-                <Button x:Name="btnEditFurniture" Content="Edit" HorizontalAlignment="Left" Height="47" Margin="199,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142"/>
-                <ListBox Name="lbFurniture" Height="426" Width="780" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Button x:Name="btnDeleteFurniture" Content="Delete" HorizontalAlignment="Left" Margin="390,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Height="47"/>
+                <DataGrid x:Name="dgFurniture" Margin="0,0,0,0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="791" SelectedIndex="0"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="29,26.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="45"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="205,26.6,0,0" Grid.Row="1" Height="45"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45"/>
             </Grid>
         </TabItem>
-        <TabItem Header="Additional services" Height="24" Margin="-2,-2,-1.8,0" VerticalAlignment="Top">
-            <Grid Background="MintCream" Width="800">
+        <TabItem Header="Additional services" Height="24" Margin="-2,-2,-2.2,0" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.5">
+            <Grid Margin="0,0,-6.2,-1.2">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="431*"/>
-                    <RowDefinition Height="110*"/>
+                    <RowDefinition Height="434*"/>
+                    <RowDefinition Height="103*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnAddAdditionalService" Content="Add" HorizontalAlignment="Left" Height="47" Margin="10,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Click="AddAdditionalService"/>
-                <Button x:Name="btnEditAdditionalService" Content="Edit" HorizontalAlignment="Left" Height="47" Margin="199,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142"/>
-                <ListBox Name="lbAdditionalServices" Height="426" Width="780" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Button x:Name="btnDeleteAdditionalService" Content="Button" HorizontalAlignment="Left" Margin="390,36,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Height="47"/>
+                <DataGrid x:Name="dgAdditionalService" Margin="0,0,0,0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="791" SelectedIndex="0"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="29,26.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="45"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="205,26.6,0,0" Grid.Row="1" Height="45"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45"/>
             </Grid>
         </TabItem>
-        <TabItem Header="Action sales">
-            <Grid Background="MintCream" Width="800">
+        <TabItem Header="Action sales" Height="24" Margin="-2,-2,-2.2,0" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.5">
+            <Grid Margin="0,0,-6.2,-1.2">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="431*"/>
-                    <RowDefinition Height="110*"/>
+                    <RowDefinition Height="434*"/>
+                    <RowDefinition Height="103*"/>
                 </Grid.RowDefinitions>
-                <Button x:Name="btnAddActionSale" Content="Add" HorizontalAlignment="Left" Height="47" Margin="10,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Click="AddActionSale"/>
-                <Button x:Name="btnEditActionSale" Content="Edit" HorizontalAlignment="Left" Height="47" Margin="199,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142"/>
-                <ListBox Name="lbActionSales" Height="426" Width="780" BorderThickness="0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-                <Button x:Name="btnDeleteActionSale" Content="Button" HorizontalAlignment="Left" Margin="390,35.8,0,0" Grid.Row="1" VerticalAlignment="Top" Width="142" Height="47"/>
+                <DataGrid x:Name="dgActionSales" Margin="0,0,0,0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="791" SelectedIndex="0"/>
+                <Button Content="Button" HorizontalAlignment="Left" Margin="29,26.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="45"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="205,26.6,0,0" Grid.Row="1" Height="45"/>
+                <Button Content="Button" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45"/>
             </Grid>
         </TabItem>
     </TabControl>
+
+
 </Window>

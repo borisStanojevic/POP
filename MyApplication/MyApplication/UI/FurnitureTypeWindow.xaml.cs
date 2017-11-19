@@ -48,7 +48,6 @@ namespace MyApplication.UI
             tbId.Text = furnitureType.Id.ToString();
             tbId.IsReadOnly = true;
             tbName.Text = furnitureType.Name;
-            cbDeleted.IsChecked = furnitureType.Deleted ? true : false;
 
         }
 

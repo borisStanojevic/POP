@@ -7,12 +7,12 @@
   </FurnitureType>
   <FurnitureType>
     <Id>2</Id>
-    <Name>Ormar</Name>
-    <Deleted>true</Deleted>
+    <Name>Luster</Name>
+    <Deleted>false</Deleted>
   </FurnitureType>
   <FurnitureType>
     <Id>3</Id>
-    <Name>Luster</Name>
-    <Deleted>true</Deleted>
+    <Name>Ormar</Name>
+    <Deleted>false</Deleted>
   </FurnitureType>
 </ArrayOfFurnitureType>

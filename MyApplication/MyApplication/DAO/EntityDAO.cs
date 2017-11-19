@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,10 +9,10 @@ namespace MyApplication.DAO
 {
     class EntityDAO<T>
     {
-        private List<T> entitiesList;
+        private ObservableCollection<T> entitiesList;
         private string fileName;
 
-        public List<T> GetAll()
+        public ObservableCollection<T> GetAll()
         {
             this.entitiesList = GenericSerializer.Deserialize<T>(fileName);
             return this.entitiesList;
@@ -53,26 +54,21 @@ namespace MyApplication.DAO
             return true;
         }
 
-        public bool DeleteEntity(int id)
+        public void DeleteEntity(T entity)
         {
-            T entityToBeDeleted = Get(id);
-            if (entityToBeDeleted == null)
-            {
-                return false;
-            }
-
+            int entityId = (int)entity.GetType().GetProperty("Id").GetValue(entity, null);
             foreach (T item in this.GetAll())
             {
-                int itemId = (int)item.GetType().GetProperty("Id").GetValue(item, null);
-                if (itemId == id)
+                if ((int)entity.GetType().GetProperty("Id").GetValue(item, null) == entityId)
                 {
                     item.GetType().GetProperty("Deleted").SetValue(item, true);
                     break;
                 }
             }
             GenericSerializer.Serialize<T>(fileName, this.entitiesList);
-            return true;
         }
         //Implementacija Edit metode
+
+
     }
 }
