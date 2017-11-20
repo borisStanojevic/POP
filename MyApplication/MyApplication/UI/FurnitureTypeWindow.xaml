@@ -18,10 +18,10 @@
             <RowDefinition Height="17*"/>
         </Grid.RowDefinitions>
         <Label x:Name="lblId" Grid.Row="0" Grid.Column="0" Content="ID" HorizontalAlignment="Center" Margin="15,11,24.2,18.4" FontWeight="Bold" Width="68" VerticalAlignment="Center" Height="25" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-        <TextBox Padding="0" BorderThickness="1" VerticalContentAlignment="Center" Grid.Row="0" Width="267" HorizontalAlignment="Center" Name="tbId" Margin="88,11,38.6,8.4" Height="35" VerticalAlignment="Center" HorizontalScrollBarVisibility="Disabled" SelectionOpacity="0" Grid.ColumnSpan="2"/>
+        <TextBox Padding="0" Text="{Binding Path=Id}" BorderThickness="1" VerticalContentAlignment="Center" Grid.Row="0" Width="267" HorizontalAlignment="Center" Name="tbId" Margin="88,11,38.6,8.4" Height="35" VerticalAlignment="Center" HorizontalScrollBarVisibility="Disabled" SelectionOpacity="0" Grid.ColumnSpan="2"/>
         <Label x:Name="lblName" Grid.Column="0" Content="Name" HorizontalAlignment="Center" Margin="15,20.6,25.2,16.6" FontWeight="Bold" Width="67" VerticalAlignment="Center" Height="26" Grid.Row="1" ScrollViewer.VerticalScrollBarVisibility="Disabled"/>
-        <TextBox Padding="0" BorderThickness="1" VerticalContentAlignment="Center" Width="266" x:Name="tbName" Margin="89,11.6,38.6,16.6" Height="35" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalScrollBarVisibility="Disabled" SelectionOpacity="0" Grid.ColumnSpan="2"/>
-        <Button x:Name="btnAddEdit" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Height="35" Margin="9.8,34.4,0,0" Grid.Row="3" VerticalAlignment="Top" Width="95"/>
+        <TextBox Padding="0" Text="{Binding Path=Name}" BorderThickness="1" VerticalContentAlignment="Center" Width="266" x:Name="tbName" Margin="89,11.6,38.6,16.6" Height="35" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalScrollBarVisibility="Disabled" SelectionOpacity="0" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnAddEdit" Content="Button" Grid.Column="1" HorizontalAlignment="Left" Height="35" Margin="9.8,34.4,0,0" Grid.Row="3" VerticalAlignment="Top" Width="95" Click="SaveChanges"/>
         <Button x:Name="btnCancel" Content="Cancel" Grid.Column="1" HorizontalAlignment="Left" Height="35" Margin="142.8,34.4,0,0" Grid.Row="3" VerticalAlignment="Top" Width="95" IsCancel="True" Click="CloseWindow"/>
     </Grid>
 </Window>

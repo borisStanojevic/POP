@@ -1,6 +1,5 @@
 ﻿using MyApplication.DAO;
 using MyApplication.Model;
-using MyApplication.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,7 +32,7 @@ namespace MyApplication.UI
             string password = pbPassword.Password.ToString().Trim();
             bool isFound = false;
 
-            User user = UserUtil.GetByUsername(username);
+            User user = User.GetByUsername(username);
             if (user != null)
             {
                 if (user.Password == password)

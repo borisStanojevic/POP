@@ -21,7 +21,6 @@ namespace MyApplication.UI
     /// </summary>
     public partial class FurnitureTypeWindow : Window
     {
-
         public enum Mode
         {
             ADD,
@@ -36,24 +35,34 @@ namespace MyApplication.UI
             this.mode = mode;
 
             InitializeComponent();
-            if (furnitureType != null && mode.Equals(Mode.EDIT))
-            {
-                InititalizeValues(furnitureType);
-                btnAddEdit.Content = "Edit";
-            }
+            tbId.DataContext = furnitureType;
+            tbName.DataContext = furnitureType;
         }
-
+        /*
         private void InititalizeValues(FurnitureType furnitureType)
         {
             tbId.Text = furnitureType.Id.ToString();
             tbId.IsReadOnly = true;
             tbName.Text = furnitureType.Name;
-
+            btnAddEdit.Content = "Edit";
         }
-
+        */
         private void CloseWindow(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void SaveChanges(object sender, RoutedEventArgs e)
+        {
+            if (this.mode == Mode.ADD)
+            {
+                Singleton.Instance.FurnitureTypes.Add(new FurnitureType()
+                {
+                    Id = int.Parse(tbId.Text),
+                    Name = tbName.Text,
+                    Deleted = false
+                });
+            }
         }
     }
 }

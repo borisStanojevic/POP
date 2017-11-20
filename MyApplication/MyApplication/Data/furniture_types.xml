@@ -15,4 +15,14 @@
     <Name>Ormar</Name>
     <Deleted>false</Deleted>
   </FurnitureType>
+  <FurnitureType>
+    <Id>4</Id>
+    <Name>Komoda</Name>
+    <Deleted>true</Deleted>
+  </FurnitureType>
+  <FurnitureType>
+    <Id>5</Id>
+    <Name>Ugaona</Name>
+    <Deleted>false</Deleted>
+  </FurnitureType>
 </ArrayOfFurnitureType>

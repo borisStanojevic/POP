@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MyApplication.Model
 {
-    class Application
+    class Singleton
     {
-        public static Application Instance { get { return new Application(); } }
+        public static Singleton Instance { get { return new Singleton(); } }
 
         public EntityDAO<User> Users
         {
@@ -47,6 +47,6 @@ namespace MyApplication.Model
             }
         }
 
-        private Application() { }
+        private Singleton() { }
     }
 }

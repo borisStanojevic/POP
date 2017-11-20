@@ -14,7 +14,11 @@ namespace MyApplication.DAO
 
         public ObservableCollection<T> GetAll()
         {
-            this.entitiesList = GenericSerializer.Deserialize<T>(fileName);
+            this.entitiesList.Clear();
+            foreach (var item in GenericSerializer.Deserialize<T>(fileName))
+            {
+                this.entitiesList.Add(item);
+            }
             return this.entitiesList;
         }
 
@@ -54,7 +58,7 @@ namespace MyApplication.DAO
             return true;
         }
 
-        public void DeleteEntity(T entity)
+        public void Delete(T entity)
         {
             int entityId = (int)entity.GetType().GetProperty("Id").GetValue(entity, null);
             foreach (T item in this.GetAll())
