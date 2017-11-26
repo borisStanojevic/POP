@@ -32,12 +32,12 @@ namespace MyApplication.UI
             string password = pbPassword.Password.ToString().Trim();
             bool isFound = false;
 
-            User user = User.GetByUsername(username);
-            if (user != null)
-            {
-                if (user.Password == password)
-                    isFound = true;
-            }
+            ////User user = User.GetByUsername(username);
+            //if (user != null)
+            //{
+            //    if (user.Password == password)
+            //        isFound = true;
+            //}
 
             if (!isFound)
             {
@@ -49,18 +49,18 @@ namespace MyApplication.UI
             else
             {
                 tbMessage.Visibility = Visibility.Hidden;
-                switch (user.UserType)
-                {
-                    case TypeOfUser.Admin:
-                        new MainWindow().Show();
-                        this.Close();
-                        break;
-                    case TypeOfUser.Salesman:
-                        MessageBox.Show("SalesmanWindow not implemented yet");
-                        break;
-                    default:
-                        break;
-                }
+                //switch (user.UserType)
+                //{
+                //    case TypeOfUser.Admin:
+                //        new MainWindow().Show();
+                //        this.Close();
+                //        break;
+                //    case TypeOfUser.Salesman:
+                //        MessageBox.Show("SalesmanWindow not implemented yet");
+                //        break;
+                //    default:
+                //        break;
+                //}
             }
         }
     }

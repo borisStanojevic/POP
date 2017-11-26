@@ -23,14 +23,15 @@ namespace MyApplication
     public partial class MainWindow : Window
     {
         ICollectionView ftView;
-
+        public static ObservableCollection<FurnitureType> ftList;
         public MainWindow()
         {
-
+    
             InitializeComponent();
 
             //Izvor podataka za ovaj DataGrid je lista tipova namjestaja u okviru objekta za rukovanje podacima o tipovima namjestaja
-            ftView = CollectionViewSource.GetDefaultView(Singleton.Instance.FurnitureTypes);
+            ftList = Singleton.Instance.FurnitureTypes;
+            ftView = CollectionViewSource.GetDefaultView(ftList);
             dgFurnitureTypes.ItemsSource = ftView;
             dgFurnitureTypes.IsSynchronizedWithCurrentItem = true;
         }
@@ -50,7 +51,8 @@ namespace MyApplication
             FurnitureType furnitureType = (FurnitureType)dgFurnitureTypes.SelectedItem;
             if (MessageBox.Show($"Are you sure you want to delete : {furnitureType.Name} ?", "Deleting", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                Singleton.Instance.FurnitureTypes.Remove(furnitureType);
+                ftList.Remove(furnitureType);
+ 
             }
         }
 

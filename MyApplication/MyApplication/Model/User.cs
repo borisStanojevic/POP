@@ -18,16 +18,16 @@ namespace MyApplication.Model
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public static User GetByUsername(string username)
-        {
-            foreach (User user in Singleton.Instance.Users)
-            {
-                if (user.Username != username)
-                    continue;
-                return user;
-            }
-            return null;
-        }
+        //public static User GetByUsername(string username)
+        //{
+        //    foreach (User user in Singleton.Instance.Users)
+        //    {
+        //        if (user.Username != username)
+        //            continue;
+        //        return user;
+        //    }
+        //    return null;
+        //}
 
         private int id;
 

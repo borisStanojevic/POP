@@ -37,9 +37,12 @@ namespace MyApplication.UI
             this.furnitureType = furnitureType;
             this.mode = mode;
 
-            tbId.DataContext = furnitureType;
-            tbId.IsReadOnly = true;
-            tbName.DataContext = furnitureType;
+            if (mode == Mode.EDIT)
+            {
+                tbId.DataContext = furnitureType;
+                tbId.IsReadOnly = true;
+                tbName.DataContext = furnitureType;
+            }
         }
         /*
         private void InititalizeValues(FurnitureType furnitureType)
@@ -59,7 +62,7 @@ namespace MyApplication.UI
         {
             if (this.mode == Mode.ADD)
             {
-                Singleton.Instance.FurnitureTypes.Add(new FurnitureType()
+                MainWindow.ftList.Add(new FurnitureType()
                 {
                     Id = int.Parse(tbId.Text),
                     Name = tbName.Text,

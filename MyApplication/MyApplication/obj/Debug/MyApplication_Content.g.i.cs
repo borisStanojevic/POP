@@ -8,11 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/action_sales.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/additional_services.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/furniture.xml")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/furniture_types.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/sales.xml")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("data/users.xml")]
 
 
