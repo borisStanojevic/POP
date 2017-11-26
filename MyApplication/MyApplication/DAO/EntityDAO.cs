@@ -9,9 +9,17 @@ namespace MyApplication.DAO
 {
     class EntityDAO<T>
     {
-        private ObservableCollection<T> entitiesList;
+        private ObservableCollection<T> entitiesList = new ObservableCollection<T>();
+        public ObservableCollection<T> EntitiesList
+        {
+            get
+            {
+                return this.entitiesList;
+            }
+        }
         private string fileName;
 
+        /*
         public ObservableCollection<T> GetAll()
         {
             this.entitiesList.Clear();
@@ -21,17 +29,23 @@ namespace MyApplication.DAO
             }
             return this.entitiesList;
         }
+        */
 
+        // Kada kreiramo objekat ucitaju se svi etiteti u listu entitiesList
         public EntityDAO(string fileName)
         {
-            this.entitiesList = GenericSerializer.Deserialize<T>(fileName);
             this.fileName = fileName;
+
+            foreach (var item in GenericSerializer.Deserialize<T>(fileName))
+            {
+                this.entitiesList.Add(item);
+            }
         }
 
         //Kreiranje genericke metode za dobavljanje entiteta po id-u (istovremeno provjera postojanja)
         public T Get(int id)
         {
-            foreach (T item in this.GetAll())
+            foreach (T item in this.entitiesList)
             {
                 //Refleksijom dobavljam vrijednost Id property-ja
                 int itemId = (int)item.GetType().GetProperty("Id").GetValue(item, null);
@@ -53,7 +67,7 @@ namespace MyApplication.DAO
             {
                 return false;
             }
-            this.GetAll().Add(entity);
+            this.entitiesList.Add(entity);
             GenericSerializer.Serialize<T>(fileName, this.entitiesList);
             return true;
         }
@@ -61,7 +75,7 @@ namespace MyApplication.DAO
         public void Delete(T entity)
         {
             int entityId = (int)entity.GetType().GetProperty("Id").GetValue(entity, null);
-            foreach (T item in this.GetAll())
+            foreach (T item in this.entitiesList)
             {
                 if ((int)entity.GetType().GetProperty("Id").GetValue(item, null) == entityId)
                 {

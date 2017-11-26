@@ -25,4 +25,24 @@
     <Name>Ugaona</Name>
     <Deleted>false</Deleted>
   </FurnitureType>
+  <FurnitureType>
+    <Id>6</Id>
+    <Name>Fotelja</Name>
+    <Deleted>false</Deleted>
+  </FurnitureType>
+  <FurnitureType>
+    <Id>7</Id>
+    <Name>Nesto</Name>
+    <Deleted>false</Deleted>
+  </FurnitureType>
+  <FurnitureType>
+    <Id>8</Id>
+    <Name>afasfasfas</Name>
+    <Deleted>true</Deleted>
+  </FurnitureType>
+  <FurnitureType>
+    <Id>9</Id>
+    <Name>Nesto Novo</Name>
+    <Deleted>true</Deleted>
+  </FurnitureType>
 </ArrayOfFurnitureType>

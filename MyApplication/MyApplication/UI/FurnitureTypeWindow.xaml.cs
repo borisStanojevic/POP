@@ -2,6 +2,7 @@
 using MyApplication.Model;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,16 +27,18 @@ namespace MyApplication.UI
             ADD,
             EDIT
         }
-        private FurnitureType furnitureType;
         private Mode mode;
+        private FurnitureType furnitureType;   
 
         public FurnitureTypeWindow(FurnitureType furnitureType, Mode mode = Mode.ADD)
         {
+            InitializeComponent();
+
             this.furnitureType = furnitureType;
             this.mode = mode;
 
-            InitializeComponent();
             tbId.DataContext = furnitureType;
+            tbId.IsReadOnly = true;
             tbName.DataContext = furnitureType;
         }
         /*
@@ -56,7 +59,7 @@ namespace MyApplication.UI
         {
             if (this.mode == Mode.ADD)
             {
-                Singleton.Instance.FurnitureTypes.Add(new FurnitureType()
+                Singleton.Instance.FurnitureTypeDAO.Add(new FurnitureType()
                 {
                     Id = int.Parse(tbId.Text),
                     Name = tbName.Text,

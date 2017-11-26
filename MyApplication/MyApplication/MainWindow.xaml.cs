@@ -4,6 +4,7 @@ using MyApplication.UI;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,12 +22,16 @@ namespace MyApplication
 {
     public partial class MainWindow : Window
     {
+        ICollectionView ftView;
+
         public MainWindow()
         {
 
             InitializeComponent();
 
-            dgFurnitureTypes.ItemsSource = Singleton.Instance.FurnitureTypes.GetAll();
+            //Izvor podataka za ovaj DataGrid je lista tipova namjestaja u okviru objekta za rukovanje podacima o tipovima namjestaja
+            ftView = CollectionViewSource.GetDefaultView(Singleton.Instance.FurnitureTypeDAO.EntitiesList);
+            dgFurnitureTypes.ItemsSource = ftView;
             dgFurnitureTypes.IsSynchronizedWithCurrentItem = true;
         }
 
@@ -45,7 +50,7 @@ namespace MyApplication
             FurnitureType furnitureType = (FurnitureType)dgFurnitureTypes.SelectedItem;
             if (MessageBox.Show($"Are you sure you want to delete : {furnitureType.Name} ?", "Deleting", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                Singleton.Instance.FurnitureTypes.Delete(furnitureType);
+                Singleton.Instance.FurnitureTypeDAO.Delete(furnitureType);
             }
         }
 
