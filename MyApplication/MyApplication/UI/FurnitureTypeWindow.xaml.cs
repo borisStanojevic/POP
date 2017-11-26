@@ -59,7 +59,7 @@ namespace MyApplication.UI
         {
             if (this.mode == Mode.ADD)
             {
-                Singleton.Instance.FurnitureTypeDAO.Add(new FurnitureType()
+                Singleton.Instance.FurnitureTypes.Add(new FurnitureType()
                 {
                     Id = int.Parse(tbId.Text),
                     Name = tbName.Text,

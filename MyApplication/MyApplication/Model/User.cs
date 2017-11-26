@@ -20,7 +20,7 @@ namespace MyApplication.Model
 
         public static User GetByUsername(string username)
         {
-            foreach (User user in Singleton.Instance.UsersDAO.EntitiesList)
+            foreach (User user in Singleton.Instance.Users)
             {
                 if (user.Username != username)
                     continue;

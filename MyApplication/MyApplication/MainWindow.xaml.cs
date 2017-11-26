@@ -30,7 +30,7 @@ namespace MyApplication
             InitializeComponent();
 
             //Izvor podataka za ovaj DataGrid je lista tipova namjestaja u okviru objekta za rukovanje podacima o tipovima namjestaja
-            ftView = CollectionViewSource.GetDefaultView(Singleton.Instance.FurnitureTypeDAO.EntitiesList);
+            ftView = CollectionViewSource.GetDefaultView(Singleton.Instance.FurnitureTypes);
             dgFurnitureTypes.ItemsSource = ftView;
             dgFurnitureTypes.IsSynchronizedWithCurrentItem = true;
         }
@@ -50,7 +50,7 @@ namespace MyApplication
             FurnitureType furnitureType = (FurnitureType)dgFurnitureTypes.SelectedItem;
             if (MessageBox.Show($"Are you sure you want to delete : {furnitureType.Name} ?", "Deleting", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
-                Singleton.Instance.FurnitureTypeDAO.Delete(furnitureType);
+                Singleton.Instance.FurnitureTypes.Remove(furnitureType);
             }
         }
 
