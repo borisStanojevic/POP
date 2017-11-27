@@ -53,6 +53,7 @@ namespace MyApplication.UI
             btnAddEdit.Content = "Edit";
         }
         */
+        
         private void CloseWindow(object sender, RoutedEventArgs e)
         {
             this.Close();

@@ -19,13 +19,14 @@
                 <Button x:Name="btnDeleteUser" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45"/>
             </Grid>
         </TabItem>
-        <TabItem Header="Furniture types" Margin="-1.8,-2,-2,2" RenderTransformOrigin="0.502,0.5">
+        <TabItem Header="Furniture types" Margin="-1.8,-2,-2,2" RenderTransformOrigin="0.5,0.5">
             <Grid Margin="0,0,-6.2,-1.2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="434*"/>
                     <RowDefinition Height="103*"/>
                 </Grid.RowDefinitions>
-                <DataGrid x:Name="dgFurnitureTypes" Margin="0,0,0,0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="791" SelectedIndex="0"/>
+                <DataGrid AutoGenerateColumns="True" IsReadOnly="True" x:Name="dgFurnitureTypes" Margin="0,0,0,0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="791" SelectedIndex="0" AutoGeneratingColumn="dgFurnitureTypes_AutoGeneratingColumn">
+                </DataGrid>
                 <Button Content="Add" HorizontalAlignment="Left" Margin="29,26.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="45" Click="AddFurnitureType"/>
                 <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="205,26.6,0,0" Grid.Row="1" Height="45" Click="EditFurnitureType"/>
                 <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45" Click="DeleteFurnitureType"/>

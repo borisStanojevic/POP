@@ -8,8 +8,6 @@ using System.Threading.Tasks;
 
 namespace MyApplication.Model
 {
-
-
     class Singleton
     {
         public static Singleton Instance { get { return new Singleton(); } }
@@ -47,7 +45,6 @@ namespace MyApplication.Model
             //    Sales.Add(item);
             //}
 
-            FurnitureTypes.Clear();
             ObservableCollection<FurnitureType> furnitureTypesList = GenericSerializer.Deserialize<FurnitureType>("furniture_types.xml");
             foreach (var item in furnitureTypesList)
             {

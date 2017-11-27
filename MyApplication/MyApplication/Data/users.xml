@@ -2,27 +2,18 @@
 <ArrayOfUser xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <User>
     <Id>1</Id>
-    <Name>Mitar</Name>
-    <Surname>Miric</Surname>
-    <Username>tarmi123</Username>
+    <Name>Admin</Name>
+    <Surname>Adminski</Surname>
+    <Username>admin1</Username>
     <Password>123</Password>
     <UserType>Admin</UserType>
     <Deleted>false</Deleted>
   </User>
   <User>
     <Id>2</Id>
-    <Name>Pero</Name>
-    <Surname>Peric</Surname>
-    <Username>pero123</Username>
-    <Password>123</Password>
-    <UserType>Salesman</UserType>
-    <Deleted>false</Deleted>
-  </User>
-  <User>
-    <Id>3</Id>
-    <Name>Jovan</Name>
-    <Surname>Jovanovic</Surname>
-    <Username>jovan123</Username>
+    <Name>Salesman</Name>
+    <Surname>Salesmanovski</Surname>
+    <Username>salesman1</Username>
     <Password>123</Password>
     <UserType>Salesman</UserType>
     <Deleted>false</Deleted>

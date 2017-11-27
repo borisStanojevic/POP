@@ -24,16 +24,18 @@ namespace MyApplication
     {
         ICollectionView ftView;
         public static ObservableCollection<FurnitureType> ftList;
+
         public MainWindow()
         {
-    
             InitializeComponent();
 
-            //Izvor podataka za ovaj DataGrid je lista tipova namjestaja u okviru objekta za rukovanje podacima o tipovima namjestaja
             ftList = Singleton.Instance.FurnitureTypes;
             ftView = CollectionViewSource.GetDefaultView(ftList);
+            ftView.Filter = x => { return ((FurnitureType)x).Deleted == false; };
             dgFurnitureTypes.ItemsSource = ftView;
             dgFurnitureTypes.IsSynchronizedWithCurrentItem = true;
+            dgFurnitureTypes.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
+
         }
 
         private void AddFurnitureType(object sender, RoutedEventArgs e)
@@ -52,9 +54,17 @@ namespace MyApplication
             if (MessageBox.Show($"Are you sure you want to delete : {furnitureType.Name} ?", "Deleting", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 ftList.Remove(furnitureType);
- 
+                ftView.Refresh();
+                //Posle brisanja tipa namjestaja implementirati brisanje svih namhjestaja koji pripadaju tom tipu namjestaja
             }
         }
 
+        private void dgFurnitureTypes_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if ((string)e.Column.Header == "Id")
+                e.Cancel = true;
+            if ((string)e.Column.Header == "Deleted")
+                e.Cancel = true;
+        }
     }
 }

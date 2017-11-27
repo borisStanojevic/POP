@@ -54,6 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\SaleItem.cs" />
     <Compile Include="UI\FurnitureTypeWindow.xaml.cs">
       <DependentUpon>FurnitureTypeWindow.xaml</DependentUpon>
     </Compile>
@@ -129,13 +130,15 @@
     <Resource Include="Data\additional_services.xml" />
     <Resource Include="Data\furniture.xml" />
     <Resource Include="Data\sales.xml" />
-    <Resource Include="Data\users.xml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Util\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Data\furniture_types.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Data\users.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

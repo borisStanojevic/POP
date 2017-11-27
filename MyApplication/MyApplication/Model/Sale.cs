@@ -11,7 +11,8 @@ namespace MyApplication.Model
 
     {
         public const double Tax = 0.02;
-
+        
+        // List<int> stavka prodaje id
         public int Id { get; set; }
         public List<Furniture> FurnitureForSale { get; set; }
         public int BillNumber { get; set; }
