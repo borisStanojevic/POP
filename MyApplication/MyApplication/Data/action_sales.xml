@@ -1,1 +1,11 @@
-﻿<?xml version="1.0" encoding="utf-8" ?> 
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfActionSale xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ActionSale>
+    <Id>1</Id>
+    <Name>Decembarska akcija</Name>
+    <Discount>0.2</Discount>
+    <StartDate>2017-12-01T00:00:00</StartDate>
+    <EndDate>2017-12-31T00:00:00</EndDate>
+    <Deleted>false</Deleted>
+  </ActionSale>
+</ArrayOfActionSale>

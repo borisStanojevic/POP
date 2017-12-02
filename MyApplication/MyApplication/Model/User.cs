@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -18,16 +19,17 @@ namespace MyApplication.Model
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        //public static User GetByUsername(string username)
-        //{
-        //    foreach (User user in Singleton.Instance.Users)
-        //    {
-        //        if (user.Username != username)
-        //            continue;
-        //        return user;
-        //    }
-        //    return null;
-        //}
+        public static User GetByUsername(string username)
+        {
+            ObservableCollection<User> usersList = Singleton.Instance.Users;
+            foreach (User user in usersList)
+            {
+                if (user.Username != username)
+                    continue;
+                return user;
+            }
+            return null;
+        }
 
         private int id;
 
@@ -111,11 +113,6 @@ namespace MyApplication.Model
                 deleted = value;
                 OnPropertyChanged("Deleted");
             }
-        }
-
-        public override string ToString()
-        {
-            return String.Format("{0,-5}|{1,-15}|{2,-15}|{3,-15}|{4,-15}|{5,-18}|{6,-5}", Id, Name, Surname, Username, Password, UserType, Deleted);
         }
 
         public void OnPropertyChanged(string propertyName)

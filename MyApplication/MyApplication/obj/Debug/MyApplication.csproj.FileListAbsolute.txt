@@ -19,3 +19,7 @@ C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyA
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\MyApplication.pdb
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\FurnitureWindow.g.cs
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\FurnitureWindow.baml
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\UserWindow.g.cs
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\UserWindow.baml
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\ActionSaleWindow.g.cs
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\ActionSaleWindow.baml

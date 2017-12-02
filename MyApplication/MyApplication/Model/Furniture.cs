@@ -1,6 +1,7 @@
 ﻿using MyApplication.DAO;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -24,14 +25,36 @@ namespace MyApplication.Model
             }
         }
 
+        private int actionSaleId;
+
+        public int ActionSaleId
+        {
+            get { return ActionSaleId; }
+            set
+            {
+                actionSaleId = value;
+                OnPropertyChanged("ActionSaleId");
+            }
+        }
+
+
         private ActionSale actionSale;
 
+        [XmlIgnore]
         public ActionSale ActionSale
         {
-            get { return actionSale; }
+            get
+            {
+                if (actionSale == null)
+                {
+                    actionSale = new EntityDAO<ActionSale>("action_sales.xml").Get(actionSaleId);
+                }
+                return actionSale;
+            }
             set
             {
                 actionSale = value;
+                actionSaleId = actionSale.Id;
                 OnPropertyChanged("ActionSale");
             }
         }
@@ -46,7 +69,7 @@ namespace MyApplication.Model
             {
                 if (furnitureType == null)
                 {
-                    //furnitureType = Singleton.Instance.FurnitureTypeDAO.Get(furnitureTypeId);
+                    furnitureType = new EntityDAO<FurnitureType>("furniture_types.xml").Get(furnitureTypeId);
                 }
                 return furnitureType;
             }
@@ -54,14 +77,10 @@ namespace MyApplication.Model
             {
                 furnitureType = value;
                 furnitureTypeId = furnitureType.Id;
-                //OnPropertyChanged(furnitureType);
+                OnPropertyChanged("FurnitureType");
             }
-        }
 
-        //public override string ToString()
-        //{
-        //    return String.Format("{0,-5}|{1,-15}|{2,-10}|{3,-5}|{4,-5}|{5,-5}", Id, Name, Price, Quantity, Singleton.Instance.FurnitureTypeDAO.Get(furnitureTypeId).Name, ActionSale.Id, Deleted);
-        //}
+        }
 
     }
 }

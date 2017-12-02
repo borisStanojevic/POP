@@ -22,6 +22,19 @@ namespace MyApplication.Model
             }
         }
 
+        private string name;
+
+        public string Name
+        {
+            get { return name; }
+            set
+            {
+                name = value;
+                OnPropertyChanged("Name");
+            }
+        }
+
+
         private double discount;
 
         public double Discount
@@ -55,6 +68,18 @@ namespace MyApplication.Model
             {
                 endDate = value;
                 OnPropertyChanged("EndDate");
+            }
+        }
+
+        private bool deleted;
+
+        public bool Deleted
+        {
+            get { return deleted; }
+            set
+            {
+                deleted = value;
+                OnPropertyChanged("Deleted");
             }
         }
 

@@ -28,7 +28,7 @@ namespace MyApplication.UI
             EDIT
         }
         private Mode mode;
-        private FurnitureType furnitureType;   
+        private FurnitureType furnitureType;
 
         public FurnitureTypeWindow(FurnitureType furnitureType, Mode mode = Mode.ADD)
         {
@@ -44,22 +44,13 @@ namespace MyApplication.UI
                 tbName.DataContext = furnitureType;
             }
         }
-        /*
-        private void InititalizeValues(FurnitureType furnitureType)
-        {
-            tbId.Text = furnitureType.Id.ToString();
-            tbId.IsReadOnly = true;
-            tbName.Text = furnitureType.Name;
-            btnAddEdit.Content = "Edit";
-        }
-        */
-        
+
         private void CloseWindow(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
 
-        private void SaveChanges(object sender, RoutedEventArgs e)
+        private void btnAddEditFurnitureType_Click(object sender, RoutedEventArgs e)
         {
             if (this.mode == Mode.ADD)
             {
@@ -69,6 +60,7 @@ namespace MyApplication.UI
                     Name = tbName.Text,
                     Deleted = false
                 });
+                this.Close();
             }
         }
     }

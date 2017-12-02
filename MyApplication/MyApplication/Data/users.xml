@@ -18,4 +18,22 @@
     <UserType>Salesman</UserType>
     <Deleted>false</Deleted>
   </User>
+  <User>
+    <Id>3</Id>
+    <Name>Mitar</Name>
+    <Surname>Miric</Surname>
+    <Username>tarmi123</Username>
+    <Password>123</Password>
+    <UserType>Admin</UserType>
+    <Deleted>false</Deleted>
+  </User>
+  <User>
+    <Id>4</Id>
+    <Name>a</Name>
+    <Surname>aa</Surname>
+    <Username>a</Username>
+    <Password>a</Password>
+    <UserType>Salesman</UserType>
+    <Deleted>false</Deleted>
+  </User>
 </ArrayOfUser>
