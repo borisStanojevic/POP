@@ -13,7 +13,7 @@ namespace MyApplication.Model
         public static Singleton Instance { get { return new Singleton(); } }
 
         public ObservableCollection<User> Users { get; }
-        //public ObservableCollection<Sale> Sales { get; }
+        public ObservableCollection<Sale> Sales { get; }
         public ObservableCollection<FurnitureType> FurnitureTypes { get; }
         public ObservableCollection<Furniture> Furniture { get; }
         public ObservableCollection<AdditionalService> AdditionalServices { get; }
@@ -22,7 +22,7 @@ namespace MyApplication.Model
         private Singleton()
         {
             Users = new ObservableCollection<User>();
-            //Sales = new ObservableCollection<Sale>();
+            Sales = new ObservableCollection<Sale>();
             FurnitureTypes = new ObservableCollection<FurnitureType>();
             Furniture = new ObservableCollection<Furniture>();
             AdditionalServices = new ObservableCollection<AdditionalService>();
@@ -39,10 +39,11 @@ namespace MyApplication.Model
                 Users.Add(item);
             }
 
-            //foreach (var item in GenericSerializer.Deserialize<Sale>("sales.xml"))
-            //{
-            //    Sales.Add(item);
-            //}
+            ObservableCollection<Sale> salesList = GenericSerializer.Deserialize<Sale>("sales.xml");
+            foreach (var item in GenericSerializer.Deserialize<Sale>("sales.xml"))
+            {
+                Sales.Add(item);
+            }
 
             ObservableCollection<FurnitureType> furnitureTypesList = GenericSerializer.Deserialize<FurnitureType>("furniture_types.xml");
             foreach (var item in furnitureTypesList)

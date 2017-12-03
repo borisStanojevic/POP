@@ -8,4 +8,12 @@
     <EndDate>2017-12-31T00:00:00</EndDate>
     <Deleted>false</Deleted>
   </ActionSale>
+  <ActionSale>
+    <Id>2</Id>
+    <Name>NOvogodisnji popust</Name>
+    <Discount>0.25</Discount>
+    <StartDate>2017-12-31T00:00:00</StartDate>
+    <EndDate>2018-01-01T00:00:00</EndDate>
+    <Deleted>false</Deleted>
+  </ActionSale>
 </ArrayOfActionSale>

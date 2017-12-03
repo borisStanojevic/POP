@@ -27,13 +27,4 @@
     <UserType>Admin</UserType>
     <Deleted>false</Deleted>
   </User>
-  <User>
-    <Id>4</Id>
-    <Name>a</Name>
-    <Surname>aa</Surname>
-    <Username>a</Username>
-    <Password>a</Password>
-    <UserType>Salesman</UserType>
-    <Deleted>false</Deleted>
-  </User>
 </ArrayOfUser>

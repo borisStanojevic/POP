@@ -61,6 +61,15 @@
     <Compile Include="UI\AdditionalServiceWindow.xaml.cs">
       <DependentUpon>AdditionalServiceWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\AllAdditionalServicesWindow.xaml.cs">
+      <DependentUpon>AllAdditionalServicesWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AllFurnitureWindow.xaml.cs">
+      <DependentUpon>AllFurnitureWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\AllSalesWindow.xaml.cs">
+      <DependentUpon>AllSalesWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\FurnitureTypeWindow.xaml.cs">
       <DependentUpon>FurnitureTypeWindow.xaml</DependentUpon>
     </Compile>
@@ -69,6 +78,9 @@
     </Compile>
     <Compile Include="UI\LoginWindow.xaml.cs">
       <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\SalesmanWindow.xaml.cs">
+      <DependentUpon>SalesmanWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="UI\UserWindow.xaml.cs">
       <DependentUpon>UserWindow.xaml</DependentUpon>
@@ -95,6 +107,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UI\AllAdditionalServicesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AllFurnitureWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AllSalesWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UI\FurnitureTypeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -104,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UI\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\SalesmanWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -25,3 +25,11 @@ C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\ActionSaleWindow.baml
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\AdditionalServiceWindow.g.cs
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\AdditionalServiceWindow.baml
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\AllAdditionalServicesWindow.g.cs
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\AllFurnitureWindow.g.cs
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\SalesmanWindow.g.cs
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\AllAdditionalServicesWindow.baml
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\AllFurnitureWindow.baml
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\SalesmanWindow.baml
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\AllSalesWindow.g.cs
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\AllSalesWindow.baml

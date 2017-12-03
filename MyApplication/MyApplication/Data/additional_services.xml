@@ -12,4 +12,10 @@
     <Price>5000</Price>
     <Deleted>false</Deleted>
   </AdditionalService>
+  <AdditionalService>
+    <Id>3</Id>
+    <Name>NOvo</Name>
+    <Price>1221</Price>
+    <Deleted>false</Deleted>
+  </AdditionalService>
 </ArrayOfAdditionalService>

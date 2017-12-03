@@ -35,7 +35,6 @@ namespace MyApplication
 
         public MainWindow()
         {
-
             InitializeComponent();
 
             furnitureList = Singleton.Instance.Furniture;
@@ -128,16 +127,29 @@ namespace MyApplication
         private void EditFurnitureType(object sender, RoutedEventArgs e)
         {
             new FurnitureTypeWindow(dgFurnitureTypes.SelectedItem as FurnitureType, FurnitureTypeWindow.Mode.EDIT).ShowDialog();
+            GenericSerializer.Serialize<FurnitureType>("furniture_types.xml", ftList);
         }
 
         private void DeleteFurnitureType(object sender, RoutedEventArgs e)
         {
             FurnitureType furnitureType = (FurnitureType)dgFurnitureTypes.SelectedItem;
+            int furnitureTypeId = furnitureType.Id;
             if (MessageBox.Show($"Are you sure you want to delete : {furnitureType.Name} ?", "Deleting", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
             {
                 ftList.Remove(furnitureType);
                 ftView.Refresh();
                 //Posle brisanja tipa namjestaja implementirati brisanje svih namhjestaja koji pripadaju tom tipu namjestaja
+                foreach (Furniture item in furnitureList)
+                {
+                    if (item.FurnitureType.Id == furnitureTypeId)
+                    {
+                        furnitureList.Remove(item);
+                        GenericSerializer.Serialize<Furniture>("furniture_xml", furnitureList);
+                        furnitureView.Refresh();
+                        break;
+                    }
+                }
+                GenericSerializer.Serialize<FurnitureType>("furniture_types.xml", ftList);
             }
         }
 
@@ -151,6 +163,7 @@ namespace MyApplication
         private void btnEditUser_Click(object sender, RoutedEventArgs e)
         {
             new UserWindow(dgUsers.SelectedItem as User, UserWindow.Mode.EDIT).ShowDialog();
+            GenericSerializer.Serialize<User>("users.xml", usersList);
         }
 
         private void btnDeleteUser_Click(object sender, RoutedEventArgs e)
@@ -160,17 +173,20 @@ namespace MyApplication
             {
                 usersList.Remove(user);
                 usersView.Refresh();
+                GenericSerializer.Serialize<User>("users.xml", usersList);
             }
         }
 
         private void btnAddActionSale_Click(object sender, RoutedEventArgs e)
         {
             new ActionSaleWindow(null).ShowDialog();
+            GenericSerializer.Serialize<ActionSale>("action_sales.xml", actionSalesList);
         }
 
         private void btnEditActionSale_Click(object sender, RoutedEventArgs e)
         {
             new ActionSaleWindow(dgActionSales.SelectedItem as ActionSale, ActionSaleWindow.Mode.EDIT).ShowDialog();
+            GenericSerializer.Serialize<ActionSale>("action_sales.xml", actionSalesList);
         }
 
         private void btnDeleteActionSale_Click(object sender, RoutedEventArgs e)
@@ -180,6 +196,7 @@ namespace MyApplication
             {
                 actionSalesList.Remove(actionSale);
                 actionSalesView.Refresh();
+                GenericSerializer.Serialize<ActionSale>("action_sales.xml", actionSalesList);
             }
         }
 
@@ -190,32 +207,43 @@ namespace MyApplication
             {
                 additionalServicesList.Remove(additionalService);
                 additionalServicesView.Refresh();
+                GenericSerializer.Serialize<AdditionalService>("additional_services.xml", additionalServicesList);
             }
         }
 
         private void btEditAdditionalService_Click(object sender, RoutedEventArgs e)
         {
             new AdditionalServiceWindow(dgAdditionalService.SelectedItem as AdditionalService, AdditionalServiceWindow.Mode.EDIT).ShowDialog();
+            GenericSerializer.Serialize<AdditionalService>("additional_services.xml", additionalServicesList);
         }
 
         private void btAddAdditionalService_Click(object sender, RoutedEventArgs e)
         {
             new AdditionalServiceWindow(null).ShowDialog();
+            GenericSerializer.Serialize<AdditionalService>("additional_services.xml", additionalServicesList);
         }
 
         private void btnDeleteFurniture_Click(object sender, RoutedEventArgs e)
         {
-
+            Furniture furniture = (Furniture)dgFurniture.SelectedItem;
+            if (MessageBox.Show($"Are you sure you want to delete : {furniture.Name} ?", "Deleting", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                furnitureList.Remove(furniture);
+                furnitureView.Refresh();
+                GenericSerializer.Serialize<Furniture>("furniture.xml", furnitureList);
+            }
         }
 
         private void btnEditFurniture_Click(object sender, RoutedEventArgs e)
         {
             new FurnitureWindow(dgFurniture.SelectedItem as Furniture, FurnitureWindow.Mode.EDIT).ShowDialog();
+            GenericSerializer.Serialize<Furniture>("furniture.xml", furnitureList);
         }
 
         private void btnAddFurniture_Click(object sender, RoutedEventArgs e)
         {
             new FurnitureWindow(null).ShowDialog();
+            GenericSerializer.Serialize<Furniture>("furniture.xml", furnitureList);
         }
     }
 }
