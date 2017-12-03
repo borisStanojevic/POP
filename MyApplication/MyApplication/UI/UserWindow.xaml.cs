@@ -41,7 +41,7 @@ namespace MyApplication.UI
                 tbSurname.DataContext = user;
                 tbUsername.DataContext = user;
                 tbPassword.DataContext = user;
-                cbUserType.SelectedItem = user.UserType;
+                cbUserType.DataContext = user;
                 btnAddEditUser.Content = "Edit";
             }
         }

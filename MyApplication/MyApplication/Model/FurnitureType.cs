@@ -50,7 +50,7 @@ namespace MyApplication.Model
 
         public override string ToString()
         {
-            return String.Format("{0,-5}|{1,-15}|{2,-5}", Id, Name, Deleted);
+            return this.name;
         }
 
         public void OnPropertyChanged(string propertyName)
@@ -60,5 +60,6 @@ namespace MyApplication.Model
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
     }
 }

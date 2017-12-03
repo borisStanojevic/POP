@@ -5,9 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyApplication.UI"
         mc:Ignorable="d"
-        Title="FurnitureWindow" Height="300" Width="400
-        " WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
-    <Grid Background="MintCream">
-        
+        Title="FurnitureWindow" Height="375.2" Width="400" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+    <Grid>
+        <Label Content="Name" HorizontalAlignment="Left" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Furniture type" HorizontalAlignment="Left" Height="27" Margin="10,100,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Price" HorizontalAlignment="Left" Height="27" Margin="10,52,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Action sale" HorizontalAlignment="Left" Height="27" Margin="10,195,0,0" VerticalAlignment="Top" Width="114"/>
+        <TextBox Name="tbName" Text="{Binding Path=Name}"  HorizontalAlignment="Left" Height="27" Margin="151,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
+        <TextBox Name="tbPrice" Text="{Binding Path=Price}" HorizontalAlignment="Left" Height="27" Margin="151,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
+        <ComboBox Name="cbFurnitureType" SelectedValuePath="Id" SelectedItem="{Binding Path=FurnitureType}" HorizontalAlignment="Left" Height="29" Margin="151,98,0,0" VerticalAlignment="Top" Width="111"/>
+        <ComboBox Name="cbActionSale" SelectedValuePath="Id" SelectedItem="{Binding Path=ActionSale}" HorizontalAlignment="Left" Height="29" Margin="151,193,0,0" VerticalAlignment="Top" Width="111"/>
+        <Button Name="btnAddEditFurniture" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="151,273,0,0" Height="29" Click="btnAddEditFurniture_Click"/>
+        <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="264,273,0,0" Height="29"/>
     </Grid>
 </Window>

@@ -58,6 +58,9 @@
     <Compile Include="UI\ActionSaleWindow.xaml.cs">
       <DependentUpon>ActionSaleWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UI\AdditionalServiceWindow.xaml.cs">
+      <DependentUpon>AdditionalServiceWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UI\FurnitureTypeWindow.xaml.cs">
       <DependentUpon>FurnitureTypeWindow.xaml</DependentUpon>
     </Compile>
@@ -85,6 +88,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="UI\ActionSaleWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\AdditionalServiceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

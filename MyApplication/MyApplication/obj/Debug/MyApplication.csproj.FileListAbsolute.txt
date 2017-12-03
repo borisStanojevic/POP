@@ -23,3 +23,5 @@ C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\UserWindow.baml
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\ActionSaleWindow.g.cs
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\ActionSaleWindow.baml
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\AdditionalServiceWindow.g.cs
+C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\obj\Debug\UI\AdditionalServiceWindow.baml

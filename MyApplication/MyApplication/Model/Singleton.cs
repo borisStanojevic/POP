@@ -15,7 +15,7 @@ namespace MyApplication.Model
         public ObservableCollection<User> Users { get; }
         //public ObservableCollection<Sale> Sales { get; }
         public ObservableCollection<FurnitureType> FurnitureTypes { get; }
-        //public ObservableCollection<Furniture> Furniture { get; }
+        public ObservableCollection<Furniture> Furniture { get; }
         public ObservableCollection<AdditionalService> AdditionalServices { get; }
         public ObservableCollection<ActionSale> ActionSales { get; }
 
@@ -24,7 +24,7 @@ namespace MyApplication.Model
             Users = new ObservableCollection<User>();
             //Sales = new ObservableCollection<Sale>();
             FurnitureTypes = new ObservableCollection<FurnitureType>();
-            //Furniture = new ObservableCollection<Furniture>();
+            Furniture = new ObservableCollection<Furniture>();
             AdditionalServices = new ObservableCollection<AdditionalService>();
             ActionSales = new ObservableCollection<ActionSale>();
             FillWithData();
@@ -39,7 +39,6 @@ namespace MyApplication.Model
                 Users.Add(item);
             }
 
-            //Sales.Clear();
             //foreach (var item in GenericSerializer.Deserialize<Sale>("sales.xml"))
             //{
             //    Sales.Add(item);
@@ -51,21 +50,20 @@ namespace MyApplication.Model
                 FurnitureTypes.Add(item);
             }
 
-            //Furniture.Clear();
-            //ObservableCollection<Furniture> furnitureList = GenericSerializer.Deserialize<Furniture>("furniture.xml");
-            //foreach (var item in furnitureList)
-            //{
-            //    Furniture.Add(item);
-            //}
 
-            //AdditionalServices.Clear();
+            ObservableCollection<Furniture> furnitureList = GenericSerializer.Deserialize<Furniture>("furniture.xml");
+            foreach (var item in furnitureList)
+            {
+                Furniture.Add(item);
+            }
+
+
             ObservableCollection<AdditionalService> additionalServicesList = GenericSerializer.Deserialize<AdditionalService>("additional_services.xml");
             foreach (var item in additionalServicesList)
             {
                 AdditionalServices.Add(item);
             }
 
-            //ActionSales.Clear();
             ObservableCollection<ActionSale> actionSalesList = GenericSerializer.Deserialize<ActionSale>("action_sales.xml");
             foreach (var item in actionSalesList)
             {

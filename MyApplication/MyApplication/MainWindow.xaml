@@ -38,10 +38,10 @@
                     <RowDefinition Height="434*"/>
                     <RowDefinition Height="103*"/>
                 </Grid.RowDefinitions>
-                <DataGrid IsReadOnly="True" x:Name="dgFurniture" Margin="0,0,0,0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="791" SelectedIndex="0"/>
-                <Button Content="Add" HorizontalAlignment="Left" Margin="29,26.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="45"/>
-                <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="205,26.6,0,0" Grid.Row="1" Height="45"/>
-                <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45"/>
+                <DataGrid IsReadOnly="True" x:Name="dgFurniture" Margin="0,0,0,0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="791" SelectedIndex="0" AutoGeneratingColumn="dgFurniture_AutoGeneratingColumn"/>
+                <Button Name="btnAddFurniture" Content="Add" HorizontalAlignment="Left" Margin="29,26.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="45" Click="btnAddFurniture_Click"/>
+                <Button Name="btnEditFurniture" Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="205,26.6,0,0" Grid.Row="1" Height="45" Click="btnEditFurniture_Click"/>
+                <Button Name="btnDeleteFurniture" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45" Click="btnDeleteFurniture_Click"/>
             </Grid>
         </TabItem>
         <TabItem Header="Additional services" Height="24" Margin="-2,-2,-2.2,0" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.5">
@@ -51,9 +51,9 @@
                     <RowDefinition Height="103*"/>
                 </Grid.RowDefinitions>
                 <DataGrid IsReadOnly="True" x:Name="dgAdditionalService" Margin="0,0,0,0.4" HorizontalAlignment="Center" VerticalAlignment="Center" Height="434" Width="791" SelectedIndex="0" AutoGeneratingColumn="dgAdditionalService_AutoGeneratingColumn"/>
-                <Button Content="Add" HorizontalAlignment="Left" Margin="29,26.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="45"/>
-                <Button Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="205,26.6,0,0" Grid.Row="1" Height="45"/>
-                <Button Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45"/>
+                <Button Name="btAddAdditionalService" Content="Add" HorizontalAlignment="Left" Margin="29,26.6,0,0" Grid.Row="1" VerticalAlignment="Top" Width="130" Height="45" Click="btAddAdditionalService_Click"/>
+                <Button Name="btEditAdditionalService" Content="Edit" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="205,26.6,0,0" Grid.Row="1" Height="45" Click="btEditAdditionalService_Click"/>
+                <Button Name="btDeleteAdditionalService" Content="Delete" HorizontalAlignment="Left" VerticalAlignment="Top" Width="130" Margin="380,26.6,0,0" Grid.Row="1" Height="45" Click="btDeleteAdditionalService_Click"/>
             </Grid>
         </TabItem>
         <TabItem Header="Action sales" Height="24" Margin="-2,-2,-2.2,0" VerticalAlignment="Top" RenderTransformOrigin="0.502,0.5">

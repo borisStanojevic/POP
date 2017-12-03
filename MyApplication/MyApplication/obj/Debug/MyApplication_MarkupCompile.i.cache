@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Boris\Desktop\C#\POP-SF8-2016\MyApplication\MyApplication\App.xaml
-6-1833715494
+7-161783971
 
-251526376373
+261922637919
 131569487696
-MainWindow.xaml;UI\ActionSaleWindow.xaml;UI\FurnitureTypeWindow.xaml;UI\FurnitureWindow.xaml;UI\LoginWindow.xaml;UI\UserWindow.xaml;
+MainWindow.xaml;UI\ActionSaleWindow.xaml;UI\AdditionalServiceWindow.xaml;UI\FurnitureTypeWindow.xaml;UI\FurnitureWindow.xaml;UI\LoginWindow.xaml;UI\UserWindow.xaml;
 
-False
+True
 

@@ -93,5 +93,10 @@ namespace MyApplication.Model
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+        public override string ToString()
+        {
+            return this.name;
+        }
     }
 }

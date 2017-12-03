@@ -22,6 +22,8 @@ namespace MyApplication
 {
     public partial class MainWindow : Window
     {
+        ICollectionView furnitureView;
+        public static ObservableCollection<Furniture> furnitureList;
         ICollectionView ftView;
         public static ObservableCollection<FurnitureType> ftList;
         ICollectionView usersView;
@@ -33,7 +35,15 @@ namespace MyApplication
 
         public MainWindow()
         {
+
             InitializeComponent();
+
+            furnitureList = Singleton.Instance.Furniture;
+            furnitureView = CollectionViewSource.GetDefaultView(furnitureList);
+            furnitureView.Filter = x => { return ((Furniture)x).Deleted == false; };
+            dgFurniture.ItemsSource = furnitureView;
+            dgFurniture.IsSynchronizedWithCurrentItem = true;
+            dgFurniture.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
 
             //Instanciram listu, view, postavljam filter na view, postavljam izvor podataka data grid-a, postavljam sirine kolona da budu iste
             ftList = Singleton.Instance.FurnitureTypes;
@@ -63,6 +73,18 @@ namespace MyApplication
             dgAdditionalService.ItemsSource = additionalServicesView;
             dgAdditionalService.IsSynchronizedWithCurrentItem = true;
             dgAdditionalService.ColumnWidth = new DataGridLength(1, DataGridLengthUnitType.Star);
+        }
+
+        private void dgFurniture_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
+        {
+            if ((string)e.Column.Header == "Id")
+                e.Cancel = true;
+            if ((string)e.Column.Header == "Deleted")
+                e.Cancel = true;
+            if ((string)e.Column.Header == "FurnitureTypeId")
+                e.Cancel = true;
+            if ((string)e.Column.Header == "ActionSaleId")
+                e.Cancel = true;
         }
 
         private void dgFurnitureTypes_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -159,6 +181,41 @@ namespace MyApplication
                 actionSalesList.Remove(actionSale);
                 actionSalesView.Refresh();
             }
+        }
+
+        private void btDeleteAdditionalService_Click(object sender, RoutedEventArgs e)
+        {
+            AdditionalService additionalService = (AdditionalService)dgAdditionalService.SelectedItem;
+            if (MessageBox.Show($"Are you sure you want to delete : {additionalService.Name} ?", "Deleting", MessageBoxButton.YesNo, MessageBoxImage.Warning) == MessageBoxResult.Yes)
+            {
+                additionalServicesList.Remove(additionalService);
+                additionalServicesView.Refresh();
+            }
+        }
+
+        private void btEditAdditionalService_Click(object sender, RoutedEventArgs e)
+        {
+            new AdditionalServiceWindow(dgAdditionalService.SelectedItem as AdditionalService, AdditionalServiceWindow.Mode.EDIT).ShowDialog();
+        }
+
+        private void btAddAdditionalService_Click(object sender, RoutedEventArgs e)
+        {
+            new AdditionalServiceWindow(null).ShowDialog();
+        }
+
+        private void btnDeleteFurniture_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnEditFurniture_Click(object sender, RoutedEventArgs e)
+        {
+            new FurnitureWindow(dgFurniture.SelectedItem as Furniture, FurnitureWindow.Mode.EDIT).ShowDialog();
+        }
+
+        private void btnAddFurniture_Click(object sender, RoutedEventArgs e)
+        {
+            new FurnitureWindow(null).ShowDialog();
         }
     }
 }
