@@ -64,23 +64,8 @@ namespace MyApplication.Model
             }
         }
 
-
-        private int furnitureTypeId;
-
-        public int FurnitureTypeId
-        {
-            get { return furnitureTypeId; }
-            set
-            {
-                furnitureTypeId = value;
-                OnPropertyChanged("FurnitureTypeId");
-            }
-        }
-
-
         private FurnitureType furnitureType;
 
-        [XmlIgnore]
         public FurnitureType FurnitureType
         {
             get
@@ -94,22 +79,9 @@ namespace MyApplication.Model
             set
             {
                 furnitureType = value;
-                furnitureTypeId = furnitureType.Id;
                 OnPropertyChanged("FurnitureType");
             }
 
-        }
-
-        private int actionSaleId;
-
-        public int ActionSaleId
-        {
-            get { return actionSaleId; }
-            set
-            {
-                actionSaleId = value;
-                OnPropertyChanged("ActionSaleId");
-            }
         }
 
         private ActionSale actionSale;
@@ -128,7 +100,6 @@ namespace MyApplication.Model
             set
             {
                 actionSale = value;
-                actionSaleId = actionSale.Id;
                 OnPropertyChanged("ActionSale");
             }
         }

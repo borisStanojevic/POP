@@ -10,26 +10,13 @@ namespace MyApplication.Model
 {
     public enum TypeOfUser
     {
-        Admin = 1,
-        Salesman = 2
+        Admin = 0,
+        Salesman = 1
     }
 
-    [Serializable]
     public class User : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
-        public static User GetByUsername(string username)
-        {
-            ObservableCollection<User> usersList = Singleton.Instance.Users;
-            foreach (User user in usersList)
-            {
-                if (user.Username != username)
-                    continue;
-                return user;
-            }
-            return null;
-        }
 
         private int id;
 
@@ -95,7 +82,7 @@ namespace MyApplication.Model
 
         public TypeOfUser UserType
         {
-            get { return userType; ; }
+            get { return userType; }
             set
             {
                 userType = value;

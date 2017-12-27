@@ -30,8 +30,6 @@ namespace MyApplication.Model
             set { servicesForSale = value; }
         }
 
-
-
         private int billId;
 
         public int BillId

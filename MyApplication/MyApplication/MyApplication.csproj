@@ -175,19 +175,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Data\action_sales.xml" />
-    <Resource Include="Data\additional_services.xml" />
-    <Resource Include="Data\furniture.xml" />
-    <Resource Include="Data\sales.xml" />
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Util\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\furniture_types.xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Data\users.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -40,7 +40,7 @@ namespace MyApplication.Model
             }
 
             ObservableCollection<Sale> salesList = GenericSerializer.Deserialize<Sale>("sales.xml");
-            foreach (var item in GenericSerializer.Deserialize<Sale>("sales.xml"))
+            foreach (var item in salesList)
             {
                 Sales.Add(item);
             }

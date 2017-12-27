@@ -16,9 +16,7 @@ using System.Windows.Shapes;
 
 namespace MyApplication.UI
 {
-    /// <summary>
-    /// Interaction logic for LoginWindow.xaml
-    /// </summary>
+
     public partial class LoginWindow : Window
     {
         public LoginWindow()
@@ -57,6 +55,7 @@ namespace MyApplication.UI
                         break;
                     case TypeOfUser.Salesman:
                         new SalesmanWindow().Show();
+                        this.Close();
                         break;
                     default:
                         break;
