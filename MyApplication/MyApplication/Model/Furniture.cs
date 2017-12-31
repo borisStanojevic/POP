@@ -1,5 +1,4 @@
-﻿using MyApplication.DAO;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -11,56 +10,18 @@ using System.Xml.Serialization;
 namespace MyApplication.Model
 {
     [Serializable]
-    public class Furniture : INotifyPropertyChanged
+    public class Furniture : Product
     {
-        public event PropertyChangedEventHandler PropertyChanged;
 
-        private int id;
+        private int quantity;
 
-        public int Id
+        public int Quantity
         {
-            get { return id; }
+            get { return quantity; }
             set
             {
-                id = value;
-                OnPropertyChanged("Id");
-            }
-        }
-
-        private string name;
-
-        public string Name
-        {
-            get { return name; }
-            set
-            {
-                name = value;
-                OnPropertyChanged("Name");
-            }
-        }
-
-        private double price;
-
-        public double Price
-        {
-            get { return price; }
-            set
-            {
-                price = value;
-                OnPropertyChanged("Price");
-            }
-        }
-
-
-        private bool deleted;
-
-        public bool Deleted
-        {
-            get { return deleted; }
-            set
-            {
-                deleted = value;
-                OnPropertyChanged("Deleted");
+                quantity = value;
+                OnPropertyChanged("Quantity");
             }
         }
 
@@ -70,10 +31,6 @@ namespace MyApplication.Model
         {
             get
             {
-                if (furnitureType == null)
-                {
-                    furnitureType = new EntityDAO<FurnitureType>("furniture_types.xml").Get(furnitureTypeId);
-                }
                 return furnitureType;
             }
             set
@@ -86,29 +43,16 @@ namespace MyApplication.Model
 
         private ActionSale actionSale;
 
-        [XmlIgnore]
         public ActionSale ActionSale
         {
             get
             {
-                if (actionSale == null)
-                {
-                    actionSale = new EntityDAO<ActionSale>("action_sales.xml").Get(actionSaleId);
-                }
                 return actionSale;
             }
             set
             {
                 actionSale = value;
                 OnPropertyChanged("ActionSale");
-            }
-        }
-
-        public void OnPropertyChanged(string propertyName)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
     }

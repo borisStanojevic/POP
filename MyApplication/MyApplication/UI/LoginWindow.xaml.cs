@@ -21,6 +21,11 @@ namespace MyApplication.UI
     {
         public LoginWindow()
         {
+            foreach (var item in FurnitureTypeDAO.GetAll2())
+            {
+                Console.WriteLine("fasgasgas");
+                Console.WriteLine(item.Name);
+            }
             InitializeComponent();
         }
 
@@ -28,39 +33,39 @@ namespace MyApplication.UI
         {
             string username = tbUsername.Text.Trim();
             string password = pbPassword.Password.ToString().Trim();
-            bool isFound = false;
+            //bool isFound = false;
 
-            User user = User.GetByUsername(username);
-            if (user != null)
-            {
-                if (user.Password == password)
-                    isFound = true;
-            }
+            //User user = User.GetByUsername(username);
+            //if (user != null)
+            //{
+            //    if (user.Password == password)
+            //        isFound = true;
+            //}
 
-            if (!isFound)
-            {
-                tbMessage.Visibility = Visibility.Visible;
-                tbMessage.Text = "User not found";
-                tbMessage.FontWeight = FontWeights.Bold;
-                tbMessage.Foreground = new SolidColorBrush(Colors.Red);
-            }
-            else
-            {
-                tbMessage.Visibility = Visibility.Hidden;
-                switch (user.UserType)
-                {
-                    case TypeOfUser.Admin:
-                        new MainWindow().Show();
-                        this.Close();
-                        break;
-                    case TypeOfUser.Salesman:
-                        new SalesmanWindow().Show();
-                        this.Close();
-                        break;
-                    default:
-                        break;
-                }
-            }
+            //if (!isFound)
+            //{
+            //    tbMessage.Visibility = Visibility.Visible;
+            //    tbMessage.Text = "User not found";
+            //    tbMessage.FontWeight = FontWeights.Bold;
+            //    tbMessage.Foreground = new SolidColorBrush(Colors.Red);
+            //}
+            //else
+            //{
+            //    tbMessage.Visibility = Visibility.Hidden;
+            //    switch (user.UserType)
+            //    {
+            //        case TypeOfUser.Admin:
+            //            new MainWindow().Show();
+            //            this.Close();
+            //            break;
+            //        case TypeOfUser.Salesman:
+            //            new SalesmanWindow().Show();
+            //            this.Close();
+            //            break;
+            //        default:
+            //            break;
+            //    }
+            //}
         }
     }
 }

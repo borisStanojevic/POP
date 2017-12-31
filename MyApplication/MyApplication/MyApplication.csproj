@@ -35,6 +35,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DAO\DAOInterface.cs" />
+    <Compile Include="DAO\FurnitureTypeDAO.cs" />
+    <Compile Include="Model\FurnitureSaleItem.cs" />
+    <Compile Include="Model\Product.cs" />
     <Compile Include="Model\SaleItem.cs" />
     <Compile Include="UI\ActionSaleWindow.xaml.cs">
       <DependentUpon>ActionSaleWindow.xaml</DependentUpon>
@@ -147,7 +152,6 @@
     <Compile Include="Model\FurnitureType.cs" />
     <Compile Include="Model\Singleton.cs" />
     <Compile Include="Model\Sale.cs" />
-    <Compile Include="Model\Store.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

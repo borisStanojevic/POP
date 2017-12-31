@@ -35,6 +35,7 @@ namespace MyApplication
 
         public MainWindow()
         {
+
             InitializeComponent();
 
             furnitureList = Singleton.Instance.Furniture;

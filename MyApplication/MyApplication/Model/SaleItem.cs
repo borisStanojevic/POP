@@ -1,26 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace MyApplication.Model
 {
-    //public class SaleItem : INotifyPropertyChanged
-    //{
+    public class SaleItem<T> where T : Product
+    {
+        public T ProductForSale { get; set; }
+        public int Pieces { get; set; }
 
 
-    //    private int quantity;
-
-    //    public int Quantity
-    //    {
-    //        get { return quantity; }
-    //        set
-    //        {
-    //            quantity = value;
-    //            OnPropertyChanged("Quantity");
-    //        }
-    //    }
-    //}
+        //bool test()
+        //{
+        //    if(ProductForSale is Furniture)
+        //    {
+        //        int x = ((Furniture)ProductForSale).Quantity
+        //    }
+        //}
+    }
 }

@@ -42,9 +42,9 @@ namespace MyApplication.UI
                 tbName.DataContext = furniture;
                 tbPrice.DataContext = furniture;
                 cbFurnitureType.DataContext = furniture;
-                cbFurnitureType.SelectedValue = furniture.FurnitureTypeId;
+                //cbFurnitureType.SelectedValue = furniture.FurnitureTypeId;
                 cbActionSale.DataContext = furniture;
-                cbActionSale.SelectedValue = furniture.ActionSaleId;
+                //cbActionSale.SelectedValue = furniture.ActionSaleId;
                 btnAddEditFurniture.Content = "Edit";
             }
 
@@ -62,8 +62,8 @@ namespace MyApplication.UI
                     Id = lastElementId + 1,
                     Name = tbName.Text.Trim(),
                     Price = double.Parse(tbPrice.Text.Trim()),
-                    FurnitureTypeId = (int)cbFurnitureType.SelectedValue,
-                    ActionSaleId = (int)cbActionSale.SelectedValue
+                    //FurnitureTypeId = (int)cbFurnitureType.SelectedValue,
+                    //ActionSaleId = (int)cbActionSale.SelectedValue
                 });
             }
             this.Close();
