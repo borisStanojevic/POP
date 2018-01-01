@@ -55,6 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DAO\AdditionalServiceDAO.cs" />
     <Compile Include="DAO\DAOInterface.cs" />
     <Compile Include="DAO\FurnitureTypeDAO.cs" />
     <Compile Include="Model\FurnitureSaleItem.cs" />

@@ -33,9 +33,9 @@ namespace MyApplication.Model
             }
         }
 
-        private double price;
+        private decimal price;
 
-        public double Price
+        public decimal Price
         {
             get { return price; }
             set
