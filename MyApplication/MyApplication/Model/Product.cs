@@ -45,6 +45,18 @@ namespace MyApplication.Model
             }
         }
 
+        private int quantity;
+
+        public int Quantity
+        {
+            get { return quantity; }
+            set
+            {
+                quantity = value;
+                OnPropertyChanged("Quantity");
+            }
+        }
+
         private bool deleted;
 
         public bool Deleted
@@ -56,6 +68,9 @@ namespace MyApplication.Model
                 OnPropertyChanged("Deleted");
             }
         }
+
+
+
 
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -12,7 +12,7 @@ namespace MyApplication.DAO
         void Add(T entity);
         void Update(T entity);
         void Delete(T entity);
-        T Get(T entity);
-        ObservableCollection<T> GetAll(String nameFilter);
+        T Get(int entityId);
+        ObservableCollection<T> GetAll(string nameFilter);
     }
 }

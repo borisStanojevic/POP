@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 
 namespace MyApplication.Model
 {
-    [Serializable]
     public class Sale : INotifyPropertyChanged
     {
 
-        public const double Tax = 0.02;
+        public const decimal Tax = 0.02M;
 
         private ObservableCollection<Furniture> furnitureForSale = new ObservableCollection<Furniture>();
 
@@ -30,14 +29,14 @@ namespace MyApplication.Model
             set { servicesForSale = value; }
         }
 
-        private int billId;
+        private int id;
 
-        public int BillId
+        public int Id
         {
-            get { return billId; }
+            get { return Id; }
             set
             {
-                billId = value;
+                Id = value;
                 OnPropertyChanged("Id");
             }
         }
@@ -55,15 +54,15 @@ namespace MyApplication.Model
         }
 
 
-        private double fullPrice;
+        private decimal fullPrice;
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public double FullPrice
+        public decimal FullPrice
         {
             get
             {
-                double x = 0;
+                decimal x = 0;
                 foreach (Furniture item in furnitureForSale)
                 {
                     x += item.Price;

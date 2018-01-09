@@ -9,21 +9,8 @@ using System.Xml.Serialization;
 
 namespace MyApplication.Model
 {
-    [Serializable]
     public class Furniture : Product
     {
-
-        private int quantity;
-
-        public int Quantity
-        {
-            get { return quantity; }
-            set
-            {
-                quantity = value;
-                OnPropertyChanged("Quantity");
-            }
-        }
 
         private FurnitureType furnitureType;
 

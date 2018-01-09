@@ -10,14 +10,6 @@ namespace MyApplication.Model
     {
         public T ProductForSale { get; set; }
         public int Pieces { get; set; }
-
-
-        //bool test()
-        //{
-        //    if(ProductForSale is Furniture)
-        //    {
-        //        int x = ((Furniture)ProductForSale).Quantity
-        //    }
-        //}
+        
     }
 }

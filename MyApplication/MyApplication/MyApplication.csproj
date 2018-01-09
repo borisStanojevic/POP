@@ -55,10 +55,13 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DAO\ActionSaleDAO.cs" />
     <Compile Include="DAO\AdditionalServiceDAO.cs" />
     <Compile Include="DAO\DAOInterface.cs" />
+    <Compile Include="DAO\FurnitureDAO.cs" />
     <Compile Include="DAO\FurnitureTypeDAO.cs" />
-    <Compile Include="Model\FurnitureSaleItem.cs" />
+    <Compile Include="DAO\SaleDAO.cs" />
+    <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\SaleItem.cs" />
     <Compile Include="UI\ActionSaleWindow.xaml.cs">

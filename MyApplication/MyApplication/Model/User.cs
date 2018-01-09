@@ -18,18 +18,6 @@ namespace MyApplication.Model
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private int id;
-
-        public int Id
-        {
-            get { return id; }
-            set
-            {
-                id = value;
-                OnPropertyChanged("Id");
-            }
-        }
-
         private string name;
 
         public string Name

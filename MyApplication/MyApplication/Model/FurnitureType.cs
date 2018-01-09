@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace MyApplication.Model
 {
-    [Serializable]
     public class FurnitureType : INotifyPropertyChanged
     {
         private int id;

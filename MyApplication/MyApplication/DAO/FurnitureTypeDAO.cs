@@ -102,7 +102,7 @@ namespace MyApplication.DAO
             }
         }
 
-        public FurnitureType Get(FurnitureType furnitureType)
+        public FurnitureType Get(int furnitureTypeId)
         {
             string commandText = @"SELECT * FROM FurnitureType WHERE Id = @Id";
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
@@ -110,6 +110,7 @@ namespace MyApplication.DAO
                 con.Open();
                 SqlCommand command = con.CreateCommand();
                 command.CommandText = commandText;
+                command.Parameters.Add(new SqlParameter("@Id", furnitureTypeId));
 
                 using (SqlDataReader dataReader = command.ExecuteReader())
                 {
@@ -131,7 +132,7 @@ namespace MyApplication.DAO
             return null;
         }
 
-        public ObservableCollection<FurnitureType> GetAll(String nameFilter = "")
+        public ObservableCollection<FurnitureType> GetAll(string nameFilter = "")
         {
             ObservableCollection<FurnitureType> furnitureTypes = new ObservableCollection<FurnitureType>();
 

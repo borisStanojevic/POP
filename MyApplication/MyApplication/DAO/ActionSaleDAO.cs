@@ -1,22 +1,22 @@
 ﻿using MyApplication.Model;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Configuration;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
+using System.Data.SqlClient;
+using System.Configuration;
 
 namespace MyApplication.DAO
 {
-    public class AdditionalServiceDAO : DAOInterface<AdditionalService>
+    public class ActionSaleDAO : DAOInterface<ActionSale>
     {
         private static SqlConnection con;
 
-        public void Add(AdditionalService additionalService)
+        public void Add(ActionSale actionSale)
         {
-            string commandText = @"INSERT INTO AdditionalService (Name,Price) VALUES (@Name,@Price)";
+            string commandText = @"INSERT INTO ActionSale (Name,Discount,StartDate,EndDate) VALUES (@Name,@Discount,@StartDate,@EndDate)";
 
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
             {
@@ -25,60 +25,65 @@ namespace MyApplication.DAO
                 SqlCommand command = con.CreateCommand();
                 command.CommandText = commandText;
 
-                command.Parameters.Add(new SqlParameter("@Name", additionalService.Name));
-                command.Parameters.Add(new SqlParameter("@Price", additionalService.Price));
+                command.Parameters.Add(new SqlParameter("@Name", actionSale.Name));
+                command.Parameters.Add(new SqlParameter("@Discount", actionSale.Discount));
+                command.Parameters.Add(new SqlParameter("@StartDate", actionSale.StartDate));
+                command.Parameters.Add(new SqlParameter("@EndDate", actionSale.EndDate));
 
                 command.ExecuteNonQuery();
             }
         }
 
-        public void Update(AdditionalService additionalService)
+        public void Update(ActionSale actionSale)
         {
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
             {
-                if (additionalService.Id != 0)
+                if (actionSale.Id != 0)
                 {
                     con.Open();
-                    string commandText = @"UPDATE AdditionalService SET Name = @Name, Price = @Price WHERE Id = @Id";
+                    string commandText = @"UPDATE ActionSale SET Name = @Name, Discount = @Discount, StartDate = @StartDate, EndDate = @EndDate WHERE Id = @Id";
 
                     SqlCommand command = con.CreateCommand();
                     command.CommandText = commandText;
 
-                    command.Parameters.Add(new SqlParameter("@Name", additionalService.Name));
-                    command.Parameters.Add(new SqlParameter("@Price", additionalService.Price));
-                    command.Parameters.Add(new SqlParameter("@Id", additionalService.Id));
+                    command.Parameters.Add(new SqlParameter("@Name", actionSale.Name));
+                    command.Parameters.Add(new SqlParameter("@Discount", actionSale.Discount));
+                    command.Parameters.Add(new SqlParameter("@StartDate", actionSale.StartDate));
+                    command.Parameters.Add(new SqlParameter("@EndDate", actionSale.EndDate));
+                    command.Parameters.Add(new SqlParameter("@Id", actionSale.Id));
 
                     command.ExecuteNonQuery();
                 }
             }
         }
 
-        public void Delete(AdditionalService additionalService)
+        public void Delete(ActionSale actionSale)
         {
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
             {
-                if (additionalService.Id != 0)
+                if (actionSale.Id != 0)
                 {
                     con.Open();
-                    string commandText = @"UPDATE AdditionalService SET Deleted = 1 WHERE Id = @Id";
+                    string commandText = @"UPDATE ActionSale SET Deleted = 1 WHERE Id = @Id";
                     SqlCommand command = con.CreateCommand();
                     command.CommandText = commandText;
-                    command.Parameters.Add(new SqlParameter("@Id", additionalService.Id));
+                    command.Parameters.Add(new SqlParameter("@Id", actionSale.Id));
 
                     command.ExecuteNonQuery();
                 }
             }
         }
 
-        public AdditionalService Get(int additionalServiceId)
+        public ActionSale Get(int actionSaleId)
         {
-            string commandText = @"SELECT * FROM AdditionalService WHERE Id = @Id";
+            string commandText = @"SELECT * FROM ActionSale WHERE Id = @Id";
+
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
             {
                 con.Open();
                 SqlCommand command = con.CreateCommand();
                 command.CommandText = commandText;
-                command.Parameters.Add(new SqlParameter("@Id", additionalServiceId));
+                command.Parameters.Add(new SqlParameter("@Id", actionSaleId));
 
                 using (SqlDataReader dataReader = command.ExecuteReader())
                 {
@@ -86,14 +91,18 @@ namespace MyApplication.DAO
                     {
                         int id = (int)dataReader["Id"];
                         string name = (string)dataReader["Name"];
-                        decimal price = (decimal)dataReader["Price"];
+                        decimal discount = (decimal)dataReader["Discount"];
+                        DateTime startDate = (DateTime)dataReader["StartDate"];
+                        DateTime endDate = (DateTime)dataReader["EndDate"];
                         bool deleted = (bool)dataReader["Deleted"];
 
-                        return new AdditionalService()
+                        return new ActionSale()
                         {
                             Id = id,
                             Name = name,
-                            Price = price,
+                            Discount = discount,
+                            StartDate = startDate,
+                            EndDate = endDate,
                             Deleted = deleted
                         };
                     }
@@ -102,11 +111,11 @@ namespace MyApplication.DAO
             return null;
         }
 
-        public ObservableCollection<AdditionalService> GetAll(string nameFilter = "")
+        public ObservableCollection<ActionSale> GetAll(string nameFilter = "")
         {
-            ObservableCollection<AdditionalService> additionalServices = new ObservableCollection<AdditionalService>();
+            ObservableCollection<ActionSale> actionSales = new ObservableCollection<ActionSale>();
 
-            string commandText = $"SELECT * FROM AdditionalService WHERE Name LIKE '%{nameFilter}%' AND Deleted = 0;";
+            string commandText = $"SELECT * FROM ActionSale WHERE Name LIKE '%{nameFilter}%' AND Deleted = 0;";
             //Treba mi SqlConnection, SqlCommand i DataReader
 
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
@@ -123,21 +132,25 @@ namespace MyApplication.DAO
                     {
                         int id = (int)dataReader["Id"];
                         string name = (string)dataReader["Name"];
-                        decimal price = (decimal)dataReader["Price"];
+                        decimal discount = (decimal)dataReader["Discount"];
+                        DateTime startDate = (DateTime)dataReader["StartDate"];
+                        DateTime endDate = (DateTime)dataReader["EndDate"];
                         bool deleted = (bool)dataReader["Deleted"];
 
-                        additionalServices.Add(new AdditionalService()
+                        actionSales.Add(new ActionSale()
                         {
                             Id = id,
                             Name = name,
-                            Price = price,
+                            Discount = discount,
+                            StartDate = startDate,
+                            EndDate = endDate,
                             Deleted = deleted
                         });
                     }
                 }
                 dataReader.Close();
             }
-            return additionalServices;
+            return actionSales;
         }
     }
 }

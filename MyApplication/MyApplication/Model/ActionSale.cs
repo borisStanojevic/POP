@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 
 namespace MyApplication.Model
 {
-    [Serializable]
     public class ActionSale : INotifyPropertyChanged
     {
         private int id;
@@ -35,9 +34,9 @@ namespace MyApplication.Model
         }
 
 
-        private double discount;
+        private decimal discount;
 
-        public double Discount
+        public decimal Discount
         {
             get { return discount; }
             set
