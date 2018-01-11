@@ -71,7 +71,7 @@ namespace MyApplication.UI
 
         private void tbPrice_TextChanged(object sender, TextChangedEventArgs e)
         {
-            if (InputValidator.ValidateInteger(tbPrice.Text.Trim()) == false)
+            if (InputValidator.ValidatePrice(tbPrice.Text.Trim()) == false)
             {
                 tbPrice.BorderBrush = new SolidColorBrush(Colors.Red);
                 tbPrice.BorderThickness = new Thickness(2);

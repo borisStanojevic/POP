@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyApplication.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,10 +29,21 @@ namespace MyApplication.UI
 
         private void dgAllSales_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
         {
-            if ((string)e.Column.Header == "Deleted")
-                e.Cancel = true;
             if ((string)e.Column.Header == "Id")
                 e.Cancel = true;
+            if ((string)e.Column.Header == "FullPrice")
+                e.Cancel = true;
+            if ((string)e.Column.Header == "FurnitureForSale")
+                e.Cancel = true;
+            if ((string)e.Column.Header == "ServicesForSale")
+                e.Cancel = true;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Sale sale = (Sale)dgAllSales.SelectedItem;
+            BillWindow.Sale = sale;
+            new BillWindow().ShowDialog();
         }
     }
 }

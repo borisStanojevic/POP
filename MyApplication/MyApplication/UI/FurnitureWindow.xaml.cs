@@ -44,6 +44,7 @@ namespace MyApplication.UI
             {
                 tbName.DataContext = furniture;
                 tbPrice.DataContext = furniture;
+                tbQuantity.DataContext = furniture;
                 btnAddEditFurniture.Content = "Edit";
 
                 cbFurnitureType.SelectedValue = furniture.FurnitureType.Id;

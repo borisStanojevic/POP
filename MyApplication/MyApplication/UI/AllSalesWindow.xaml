@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyApplication.UI"
         mc:Ignorable="d"
-        Title="AllSalesWindow" Height="300" Width="300" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="AllSalesWindow" Height="300" Width="400" SizeToContent="WidthAndHeight" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <DataGrid IsReadOnly="True" Name="dgAllSales" HorizontalAlignment="Left" Height="269" Margin="0,1,-0.4,0" VerticalAlignment="Top" Width="294" AutoGeneratingColumn="dgAllSales_AutoGeneratingColumn"/>
+        <DataGrid IsReadOnly="True" Name="dgAllSales" HorizontalAlignment="Left" Height="220" Margin="0,1,0,0" VerticalAlignment="Top" Width="393" AutoGeneratingColumn="dgAllSales_AutoGeneratingColumn"/>
+        <Button Content="Show Details" HorizontalAlignment="Left" Height="34" Margin="132,226,15,15" VerticalAlignment="Top" Width="106" Click="Button_Click"/>
     </Grid>
 </Window>

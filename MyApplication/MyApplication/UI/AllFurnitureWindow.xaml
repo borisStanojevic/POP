@@ -8,8 +8,8 @@
         Title="AllFurnitureWindow" Height="352.901" Width="480" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <DataGrid Name="dgAllFurniture" HorizontalAlignment="Left" Margin="0,0,-0.4,63.4" Width="473" AutoGeneratingColumn="dgAllFurniture_AutoGeneratingColumn" SelectedIndex="0" IsReadOnly="True"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="27" Margin="183,286,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
-        <TextBox Name="tbPieces" HorizontalAlignment="Left" Height="20" Margin="10,265,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.91" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextChanged="tbPieces_TextChanged"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="27" Margin="183,286,15,15" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+        <TextBox Name="tbPieces" HorizontalAlignment="Left" Height="20" Margin="10,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" RenderTransformOrigin="0.5,0.91" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextChanged="tbPieces_TextChanged"/>
 
     </Grid>
 </Window>

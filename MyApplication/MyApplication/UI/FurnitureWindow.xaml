@@ -49,8 +49,8 @@
         </TextBox>
         <ComboBox Name="cbFurnitureType" SelectedValuePath="Id"  HorizontalAlignment="Left" Height="29" Margin="151,151,0,0" VerticalAlignment="Top" Width="111" RenderTransformOrigin="0.503,1.007"/>
         <ComboBox Name="cbActionSale" SelectedValuePath="Id" HorizontalAlignment="Left" Height="29" Margin="151,247,0,0" VerticalAlignment="Top" Width="111"/>
-        <Button Name="btnAddEditFurniture" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="151,323,0,0" Height="29" Click="btnAddEditFurniture_Click"/>
-        <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="264,323,0,0" Height="29"/>
+        <Button Name="btnAddEditFurniture" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="151,323,15,15" Height="29" Click="btnAddEditFurniture_Click"/>
+        <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="264,323,15,15" Height="29"/>
         <Label Content="Quantity" HorizontalAlignment="Left" Height="27" Margin="10,97,0,0" VerticalAlignment="Top" Width="114"/>
     </Grid>
 </Window>

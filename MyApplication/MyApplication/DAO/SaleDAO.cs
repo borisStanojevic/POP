@@ -16,7 +16,7 @@ namespace MyApplication.DAO
 
         public void Add(Sale sale)
         {
-            string commandText = @"INSERT INTO Sale (Id,DateOfSale,FullPrice,Buyer) VALUES (@Id,@DateOfSale, @FullPrice, @Buyer)";
+            string commandText = @"INSERT INTO Sale (Id,DateOfSale,FullPrice,Buyer) VALUES (@Id,@DateOfSale, @FullPrice, @Buyer);";
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
             {
                 con.Open();
@@ -35,25 +35,29 @@ namespace MyApplication.DAO
 
                     command.ExecuteNonQuery();
 
-                    commandText = @"INSERT INTO FurnitureSaleItem (FurnitureId, Pieces, SaleId) VALUES (@FurnitureId, @Pieces, @SaleId)";
+                    commandText = @"INSERT INTO FurnitureSaleItem (FurnitureId, Pieces, SaleId) VALUES (@FurnitureId, @Pieces, @SaleId);";
                     command.CommandText = commandText;
                     foreach (SaleItem<Furniture> item in sale.FurnitureForSale)
                     {
+                        command.Parameters.Clear();
                         command.Parameters.Add(new SqlParameter("@FurnitureId", item.ProductForSale.Id));
-                        command.Parameters.Add(new SqlParameter("@Piececs", item.Pieces));
+                        command.Parameters.Add(new SqlParameter("@Pieces", item.Pieces));
                         command.Parameters.Add(new SqlParameter("@SaleId", sale.Id));
                         command.ExecuteNonQuery();
                     }
 
-                    commandText = @"INSERT INTO AdditionalServiceSaleItem (AdditionalServiceId, Pieces, SaleId) VALUES (@AdditionalServiceId, @Pieces, @SaleId)";
+                    commandText = @"INSERT INTO AdditionalServiceSaleItem (AdditionalServiceId, Pieces, SaleId) VALUES (@AdditionalServiceId, @Pieces, @SaleId);";
                     command.CommandText = commandText;
                     foreach (SaleItem<AdditionalService> item in sale.ServicesForSale)
                     {
+                        command.Parameters.Clear();
                         command.Parameters.Add(new SqlParameter("@AdditionalServiceId", item.ProductForSale.Id));
                         command.Parameters.Add(new SqlParameter("@Pieces", item.Pieces));
                         command.Parameters.Add(new SqlParameter("@SaleId", sale.Id));
                         command.ExecuteNonQuery();
                     }
+
+                    transaction.Commit();
                 }
                 catch (Exception exc)
                 {
@@ -131,7 +135,7 @@ namespace MyApplication.DAO
                     while (dataReader.Read())
                     {
                         int furnitureId = (int)dataReader["FurnitureId"];
-                        int pieces = (int)dataReader["Pieces"];
+                        int pieces = (int)(byte)dataReader["Pieces"];
                         int saleId = (int)dataReader["SaleId"];
 
                         Furniture furniture = new FurnitureDAO().Get(furnitureId);
@@ -152,7 +156,7 @@ namespace MyApplication.DAO
                     while (dataReader.Read())
                     {
                         int additionalServiceId = (int)dataReader["AdditionalServiceId"];
-                        int pieces = (int)dataReader["Pieces"];
+                        int pieces = (int)(byte)dataReader["Pieces"];
                         int saleId = (int)dataReader["SaleId"];
 
                         AdditionalService additionalService = new AdditionalServiceDAO().Get(additionalServiceId);

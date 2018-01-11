@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyApplication.UI"
         mc:Ignorable="d"
-        Title="ActionSaleWindow" Height="300" Width="300">
+        Title="ActionSaleWindow" Height="300" Width="300" WindowStartupLocation="CenterScreen">
 
     <Window.Resources>
         <ControlTemplate x:Key="TextBoxErrorTemplate">
@@ -22,7 +22,7 @@
         <Label Content="End Date" HorizontalAlignment="Left" Margin="10,149,0,0" VerticalAlignment="Top" Width="79"/>
         <DatePicker Name="dpStartDate" SelectedDate="{Binding Path=StartDate}" HorizontalAlignment="Left" Height="26" Margin="103,97,0,0" VerticalAlignment="Top" Width="160"/>
         <DatePicker Name="dpEndDate" SelectedDate="{Binding Path=EndDate}" HorizontalAlignment="Left" Height="26" Margin="103,149,0,0" VerticalAlignment="Top" Width="160"/>
-        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbName"  HorizontalAlignment="Left" Height="26" Margin="103,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TextChanged="tbName_TextChanged"    >
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbName"  HorizontalAlignment="Left" Height="26" Margin="103,10,15,15" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TextChanged="tbName_TextChanged"    >
             <TextBox.Text>
                 <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>
@@ -31,7 +31,7 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbDiscount" HorizontalAlignment="Left" Height="26" Margin="103,55,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TextChanged="tbDiscount_TextChanged">
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbDiscount" HorizontalAlignment="Left" Height="26" Margin="103,55,15,15" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" TextChanged="tbDiscount_TextChanged">
             <TextBox.Text>
                 <Binding Path="Discount" UpdateSourceTrigger="PropertyChanged">
                     <Binding.ValidationRules>

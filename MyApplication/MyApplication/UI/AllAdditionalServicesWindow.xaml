@@ -8,7 +8,7 @@
         Title="AllAdditionalServicesWindow" Height="292.343" Width="400" SizeToContent="WidthAndHeight" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
         <DataGrid IsReadOnly="True" Name="dgAllAdditionalServices" HorizontalAlignment="Left" Height="205" Margin="0,0,-0.4,0" VerticalAlignment="Top" Width="393" AutoGeneratingColumn="dgAllAdditionalServices_AutoGeneratingColumn" SelectedIndex="0"/>
-        <Button Content="Add" HorizontalAlignment="Left" Height="26" Margin="138,227,0,0" VerticalAlignment="Top" Width="101" Click="Button_Click"/>
+        <Button Content="Add" HorizontalAlignment="Left" Height="27" Margin="138,227,15,15" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
         <TextBox Name="tbPieces" HorizontalAlignment="Left" Height="20" Margin="10,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="28" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" TextChanged="tbPieces_TextChanged"/>
 
     </Grid>

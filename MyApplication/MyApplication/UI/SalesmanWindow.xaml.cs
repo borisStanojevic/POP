@@ -64,23 +64,37 @@ namespace MyApplication.UI
             new AllAdditionalServicesWindow().ShowDialog();
         }
 
-        //private void btnSaveSale_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Sale sale = new Sale();
-        //    foreach (var item in furnitureForSale)
-        //    {
-        //        sale.FurnitureForSale.Add(item);
-        //    }
-        //    foreach (var item in servicesForSale)
-        //    {
-        //        sale.ServicesForSale.Add(item);
-        //    }
-        //    sale.Id = new Random().Next();
-        //    sale.DateOfSale = dpDateOfSale.SelectedDate.Value.Date;
-        //    sale.Buyer = tbBuyer.Text.Trim();
+        private void btnSaveSale_Click(object sender, RoutedEventArgs e)
+        {
+            Sale sale = new Sale();
+            sale.Id = new Random().Next(2000000000);
+            sale.Buyer = tbBuyer.Text.Trim();
+            sale.DateOfSale = dpDateOfSale.SelectedDate.Value.Date;
+            decimal fullPrice = 0;
+            foreach (SaleItem<Furniture> item in furnitureForSale)
+            {
+                fullPrice = item.ProductForSale.Price * item.Pieces;
+                sale.FurnitureForSale.Add(item);
+            }
+            foreach (SaleItem<AdditionalService> item in servicesForSale)
+            {
+                fullPrice = item.ProductForSale.Price * item.Pieces;
+                sale.ServicesForSale.Add(item);
+            }
 
-        //    salesList.Add(sale);
-        //}
+            sale.FullPrice = fullPrice + (fullPrice * Sale.Tax);
+
+            salesList.Add(sale);
+
+            try
+            {
+                new SaleDAO().Add(sale);
+            }
+            catch (Exception)
+            {
+                Console.Write("Nesto nece");
+            }
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

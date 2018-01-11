@@ -46,7 +46,7 @@ namespace MyApplication.UI
                 cbUserType.DataContext = user;
                 btnAddEditUser.Content = "Edit";
 
-                //tbUsername.IsReadOnly = true;
+                tbUsername.IsReadOnly = true;
             }
         }
 

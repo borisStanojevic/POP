@@ -39,8 +39,8 @@
                 </Binding>
             </TextBox.Text>
         </TextBox>
-        <Button Name="btnAddEditAdditionalService" Content="Add" HorizontalAlignment="Left" Height="30" Margin="97,123,0,0" VerticalAlignment="Top" Width="80" Click="btnAddEditAdditionalService_Click"/>
-        <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" Height="30" Margin="195,123,0,0" VerticalAlignment="Top" Width="80"/>
+        <Button Name="btnAddEditAdditionalService" Content="Add" HorizontalAlignment="Left" Height="30" Margin="97,123,15,15" VerticalAlignment="Top" Width="80" Click="btnAddEditAdditionalService_Click"/>
+        <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" Height="30" Margin="195,123,15,15" VerticalAlignment="Top" Width="80"/>
 
     </Grid>
 </Window>

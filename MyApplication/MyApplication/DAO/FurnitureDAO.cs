@@ -109,7 +109,7 @@ namespace MyApplication.DAO
                     {
                         int id = (int)dataReader["Id"];
                         string name = (string)dataReader["Name"];
-                        int quantity = (int)dataReader["Quantity"];
+                        int quantity = (int)(Int16)dataReader["Quantity"];
                         decimal price = (decimal)dataReader["Price"];
                         int furnitureTypeId = (int)dataReader["FurnitureTypeId"];
                         FurnitureType furnitureType = new FurnitureTypeDAO().Get(furnitureTypeId);
