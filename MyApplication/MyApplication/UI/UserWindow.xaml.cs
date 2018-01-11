@@ -1,4 +1,6 @@
-﻿using MyApplication.Model;
+﻿using MyApplication.DAO;
+using MyApplication.Model;
+using MyApplication.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -43,27 +45,94 @@ namespace MyApplication.UI
                 tbPassword.DataContext = user;
                 cbUserType.DataContext = user;
                 btnAddEditUser.Content = "Edit";
+
+                //tbUsername.IsReadOnly = true;
             }
         }
 
         private void btnAddEditUser_Click(object sender, RoutedEventArgs e)
         {
-            if (this.mode == Mode.ADD)
-            {
-                int lastElementIndex = MainWindow.usersList.Count - 1;
-                int lastElementId = MainWindow.usersList.ElementAt(lastElementIndex).Id;
+            UserDAO userDAO = new UserDAO();
 
-                MainWindow.usersList.Add(new User()
+            if (mode == Mode.ADD)
+            {
+                User user = new User()
                 {
-                    Id = lastElementId + 1,
-                    Name = tbName.Text,
-                    Surname = tbSurname.Text,
-                    Username = tbUsername.Text,
-                    Password = tbPassword.Text,
-                    UserType = (TypeOfUser)cbUserType.SelectedItem,
-                    Deleted = false
-                });
-                this.Close();
+                    Name = tbName.Text.Trim(),
+                    Surname = tbSurname.Text.Trim(),
+                    Username = tbUsername.Text.Trim(),
+                    Password = tbPassword.Text.Trim(),
+                    UserType = (TypeOfUser)cbUserType.SelectedItem
+                };
+                MainWindow.usersList.Add(user);
+                userDAO.Add(user);
+            }
+            else
+            {
+                user.Name = tbName.Text.Trim();
+                user.Surname = tbSurname.Text.Trim();
+                user.Password = tbPassword.Text.Trim();
+                user.UserType = (TypeOfUser)cbUserType.SelectedItem;
+
+                userDAO.Update(user);
+            }
+
+            Close();
+        }
+
+        private void tbName_TextChanged(object sender, RoutedEventArgs e)
+        {
+            if (InputValidator.ValidateString(tbName.Text.Trim()) == false)
+            {
+                tbName.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbName.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbName.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbName.BorderThickness = new Thickness(1);
+            }
+        }
+
+        private void tbSurname_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidateString(tbSurname.Text.Trim()) == false)
+            {
+                tbSurname.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbSurname.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbSurname.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbSurname.BorderThickness = new Thickness(1);
+            }
+        }
+
+        private void tbUsername_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidateUsername(tbUsername.Text.Trim()) == false)
+            {
+                tbUsername.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbUsername.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbUsername.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbUsername.BorderThickness = new Thickness(1);
+            }
+        }
+
+        private void tbPassword_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidatePassword(tbPassword.Text.Trim()) == false)
+            {
+                tbPassword.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbPassword.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbPassword.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbPassword.BorderThickness = new Thickness(1);
             }
         }
     }

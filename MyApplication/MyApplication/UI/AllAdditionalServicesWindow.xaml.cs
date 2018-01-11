@@ -1,4 +1,5 @@
 ﻿using MyApplication.Model;
+using MyApplication.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,17 @@ namespace MyApplication.UI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AdditionalService additionalService = (AdditionalService)dgAllAdditionalServices.SelectedItem;
-            SalesmanWindow.servicesForSale.Add(additionalService);
-            this.Close();
+            int pieces = int.Parse(tbPieces.Text.Trim());
+
+            SaleItem<AdditionalService> asSaleItem = new SaleItem<AdditionalService>()
+            {
+                ProductForSale = additionalService,
+                Pieces = pieces
+            };
+
+            SalesmanWindow.servicesForSale.Add(asSaleItem);
+
+            Close();
         }
 
         private void dgAllAdditionalServices_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -41,6 +51,22 @@ namespace MyApplication.UI
                 e.Cancel = true;
             if ((string)e.Column.Header == "Id")
                 e.Cancel = true;
+            if ((string)e.Column.Header == "Quantity")
+                e.Cancel = true;
+        }
+
+        private void tbPieces_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidateInteger(tbPieces.Text.Trim()) == false)
+            {
+                tbPieces.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbPieces.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbPieces.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbPieces.BorderThickness = new Thickness(1);
+            }
         }
     }
 }

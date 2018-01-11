@@ -10,8 +10,8 @@ namespace MyApplication.Model
 {
     public enum TypeOfUser
     {
-        Admin = 0,
-        Salesman = 1
+        Admin = 1,
+        Salesman = 2
     }
 
     public class User : INotifyPropertyChanged

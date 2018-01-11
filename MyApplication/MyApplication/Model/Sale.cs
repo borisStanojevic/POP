@@ -13,19 +13,19 @@ namespace MyApplication.Model
 
         public const decimal Tax = 0.02M;
 
-        private ObservableCollection<Furniture> furnitureForSale = new ObservableCollection<Furniture>();
+        private ObservableCollection<SaleItem<Furniture>> furnitureForSale = new ObservableCollection<SaleItem<Furniture>>();
 
-        public ObservableCollection<Furniture> FurnitureForSale
+        public ObservableCollection<SaleItem<Furniture>> FurnitureForSale
         {
             get { return furnitureForSale; }
             set { furnitureForSale = value; }
         }
 
-        private ObservableCollection<AdditionalService> servicesForSale = new ObservableCollection<AdditionalService>();
+        private ObservableCollection<SaleItem<AdditionalService>> servicesForSale = new ObservableCollection<SaleItem<AdditionalService>>();
 
-        public ObservableCollection<AdditionalService> ServicesForSale
+        public ObservableCollection<SaleItem<AdditionalService>> ServicesForSale
         {
-            get { return servicesForSale = new ObservableCollection<AdditionalService>(); }
+            get { return servicesForSale; }
             set { servicesForSale = value; }
         }
 
@@ -33,13 +33,10 @@ namespace MyApplication.Model
 
         public int Id
         {
-            get { return Id; }
-            set
-            {
-                Id = value;
-                OnPropertyChanged("Id");
-            }
+            get { return id; }
+            set { id = value; }
         }
+
 
         private DateTime dateOfSale;
 
@@ -63,13 +60,13 @@ namespace MyApplication.Model
             get
             {
                 decimal x = 0;
-                foreach (Furniture item in furnitureForSale)
+                foreach (SaleItem<Furniture> item in furnitureForSale)
                 {
-                    x += item.Price;
+                    x += item.ProductForSale.Price;
                 }
-                foreach (AdditionalService item in servicesForSale)
+                foreach (SaleItem<AdditionalService> item in servicesForSale)
                 {
-                    x += item.Price;
+                    x += item.ProductForSale.Price;
                 }
                 return x + (x * Tax);
             }

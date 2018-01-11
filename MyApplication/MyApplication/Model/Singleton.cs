@@ -33,40 +33,36 @@ namespace MyApplication.Model
         private void FillWithData()
         {
 
-            ObservableCollection<User> usersList = GenericSerializer.Deserialize<User>("users.xml");
-            foreach (var item in usersList)
+            foreach (var item in new UserDAO().GetAll())
             {
                 Users.Add(item);
             }
 
-            ObservableCollection<Sale> salesList = GenericSerializer.Deserialize<Sale>("sales.xml");
-            foreach (var item in salesList)
+
+            foreach (var item in new SaleDAO().GetAll())
             {
                 Sales.Add(item);
             }
 
-            ObservableCollection<FurnitureType> furnitureTypesList = GenericSerializer.Deserialize<FurnitureType>("furniture_types.xml");
-            foreach (var item in furnitureTypesList)
+
+            foreach (var item in new FurnitureTypeDAO().GetAll())
             {
                 FurnitureTypes.Add(item);
             }
 
 
-            ObservableCollection<Furniture> furnitureList = GenericSerializer.Deserialize<Furniture>("furniture.xml");
-            foreach (var item in furnitureList)
+            foreach (var item in new FurnitureDAO().GetAll())
             {
                 Furniture.Add(item);
             }
 
 
-            ObservableCollection<AdditionalService> additionalServicesList = GenericSerializer.Deserialize<AdditionalService>("additional_services.xml");
-            foreach (var item in additionalServicesList)
+            foreach (var item in new AdditionalServiceDAO().GetAll())
             {
                 AdditionalServices.Add(item);
             }
 
-            ObservableCollection<ActionSale> actionSalesList = GenericSerializer.Deserialize<ActionSale>("action_sales.xml");
-            foreach (var item in actionSalesList)
+            foreach (var item in new ActionSaleDAO().GetAll())
             {
                 ActionSales.Add(item);
             }

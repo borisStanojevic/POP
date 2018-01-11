@@ -17,7 +17,7 @@
         <DatePicker Name="dpDateOfSale" HorizontalAlignment="Left" Height="30" Margin="165,456,0,0" VerticalAlignment="Top" Width="187"/>
         <Label Content="Buyer" HorizontalAlignment="Left" Height="30" Margin="10,513,0,0" VerticalAlignment="Top" Width="119"/>
         <TextBox Name="tbBuyer" HorizontalAlignment="Left" Height="30" Margin="165,513,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="187"/>
-        <Button Name="btnSaveSale" Content="Save" HorizontalAlignment="Left" Height="35" Margin="10,579,0,0" VerticalAlignment="Top" Width="156" Click="btnSaveSale_Click"/>
+        <Button Name="btnSaveSale" Content="Save" HorizontalAlignment="Left" Height="35" Margin="10,579,0,0" VerticalAlignment="Top" Width="156"/>
         <Button Content="History" HorizontalAlignment="Left" Height="35" Margin="584,579,0,0" VerticalAlignment="Top" Width="149" Click="Button_Click"/>
 
     </Grid>

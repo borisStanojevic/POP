@@ -10,9 +10,13 @@ namespace MyApplication.DAO
     public interface DAOInterface<T> where T : class
     {
         void Add(T entity);
+
         void Update(T entity);
+
         void Delete(T entity);
+
         T Get(int entityId);
+
         ObservableCollection<T> GetAll(string nameFilter);
     }
 }

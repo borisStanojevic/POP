@@ -1,4 +1,6 @@
-﻿using MyApplication.Model;
+﻿using MyApplication.DAO;
+using MyApplication.Model;
+using MyApplication.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,37 +38,114 @@ namespace MyApplication.UI
 
             cbFurnitureType.ItemsSource = MainWindow.ftList;
             cbActionSale.ItemsSource = MainWindow.actionSalesList;
+            cbFurnitureType.SelectedIndex = 0;
 
             if (mode == Mode.EDIT)
             {
                 tbName.DataContext = furniture;
                 tbPrice.DataContext = furniture;
-                cbFurnitureType.DataContext = furniture;
-                //cbFurnitureType.SelectedValue = furniture.FurnitureTypeId;
-                cbActionSale.DataContext = furniture;
-                //cbActionSale.SelectedValue = furniture.ActionSaleId;
                 btnAddEditFurniture.Content = "Edit";
+
+                cbFurnitureType.SelectedValue = furniture.FurnitureType.Id;
+                try
+                {
+                    cbActionSale.SelectedValue = furniture.ActionSale.Id;
+                }
+                catch (Exception)
+                {
+                    cbActionSale.SelectedValue = null;
+                }
             }
 
         }
 
         private void btnAddEditFurniture_Click(object sender, RoutedEventArgs e)
         {
-            if (this.mode == Mode.ADD)
-            {
-                int lastElementIndex = MainWindow.furnitureList.Count - 1;
-                int lastElementId = MainWindow.furnitureList.ElementAt(lastElementIndex).Id;
 
-                MainWindow.furnitureList.Add(new Furniture
-                {
-                    Id = lastElementId + 1,
-                    Name = tbName.Text.Trim(),
-                    Price = double.Parse(tbPrice.Text.Trim()),
-                    //FurnitureTypeId = (int)cbFurnitureType.SelectedValue,
-                    //ActionSaleId = (int)cbActionSale.SelectedValue
-                });
+            FurnitureDAO furnitureDAO = new FurnitureDAO();
+            FurnitureType furnitureType;
+            ActionSale actionSale;
+            try
+            {
+                furnitureType = new FurnitureTypeDAO().Get((int)cbFurnitureType.SelectedValue);
+                actionSale = cbActionSale.SelectedItem == null ? null : new ActionSaleDAO().Get((int)cbActionSale.SelectedValue);
             }
-            this.Close();
+            catch (Exception)
+            {
+                furnitureType = null;
+                actionSale = null;
+            }
+
+            if (mode == Mode.ADD)
+            {
+
+                Furniture furniture = new Furniture()
+                {
+                    Name = tbName.Text.Trim(),
+                    Price = decimal.Parse(tbPrice.Text.Trim()),
+                    Quantity = int.Parse(tbQuantity.Text.Trim()),
+                    FurnitureType = furnitureType,
+                    ActionSale = actionSale
+                };
+
+                MainWindow.furnitureList.Add(furniture);
+
+                furnitureDAO.Add(furniture);
+            }
+            else
+            {
+                furniture.Name = tbName.Text.Trim();
+                furniture.Price = decimal.Parse(tbPrice.Text.Trim());
+                furniture.Quantity = int.Parse(tbQuantity.Text.Trim());
+                furniture.FurnitureType = furnitureType;
+                furniture.ActionSale = actionSale;
+
+                furnitureDAO.Update(furniture);
+            }
+
+            Close();
+        }
+
+        private void tbName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidateString(tbName.Text.Trim()) == false)
+            {
+                tbName.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbName.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbName.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbName.BorderThickness = new Thickness(1);
+            }
+        }
+
+        private void tbPrice_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidatePrice(tbPrice.Text.Trim()) == false)
+            {
+                tbPrice.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbPrice.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbPrice.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbPrice.BorderThickness = new Thickness(1);
+            }
+        }
+
+        private void tbQuantity_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidateInteger(tbQuantity.Text.Trim()) == false)
+            {
+                tbQuantity.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbQuantity.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbQuantity.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbQuantity.BorderThickness = new Thickness(1);
+            }
         }
     }
 }

@@ -9,11 +9,36 @@
         SizeToContent="WidthAndHeight"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ControlTemplate x:Key="TextBoxErrorTemplate">
+            <Border BorderBrush="Red" BorderThickness="2">
+                <AdornedElementPlaceholder/>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+    
     <Grid>
         <Label Content="Name" HorizontalAlignment="Left" Height="25" Margin="10,10,0,0" VerticalAlignment="Top" Width="83"/>
         <Label Content="Price" HorizontalAlignment="Left" Height="25" Margin="10,56,0,0" VerticalAlignment="Top" Width="83"/>
-        <TextBox  Name="tbName" Text="{Binding Path=Name}" HorizontalAlignment="Left" Height="25" Margin="98,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" />
-        <TextBox Name="tbPrice" Text="{Binding Path=Price}" HorizontalAlignment="Left" Height="25" Margin="98,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177"/>
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbName" HorizontalAlignment="Left" Height="25" Margin="98,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" TextChanged="tbName_TextChanged"  >
+            <TextBox.Text>
+                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:StringValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbPrice" HorizontalAlignment="Left" Height="25" Margin="98,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="177" TextChanged="tbPrice_TextChanged">
+            <TextBox.Text>
+                <Binding Path="Price" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:PriceValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <Button Name="btnAddEditAdditionalService" Content="Add" HorizontalAlignment="Left" Height="30" Margin="97,123,0,0" VerticalAlignment="Top" Width="80" Click="btnAddEditAdditionalService_Click"/>
         <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" Height="30" Margin="195,123,0,0" VerticalAlignment="Top" Width="80"/>
 

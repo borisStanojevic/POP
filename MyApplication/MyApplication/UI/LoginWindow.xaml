@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MyApplication.UI"
         mc:Ignorable="d"
         Title="LoginWindow" Height="280.335" Width="452.744" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
-    <Grid Background="MintCream" Margin="0,0,0.4,-4.6">
+    <Grid Margin="0,0,0.4,-4.6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="134*"/>
             <ColumnDefinition Width="275*"/>

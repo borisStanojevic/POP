@@ -33,14 +33,12 @@ namespace MyApplication.DAO
                 int actionSaleId = furniture.ActionSale == null ? -1 : furniture.ActionSale.Id;
                 if (actionSaleId == -1)
                 {
-                    command.Parameters.Add(new SqlParameter("@ActionSaleId", null));
+                    command.Parameters.AddWithValue("@ActionSaleId", DBNull.Value);
                 }
                 else
                 {
                     command.Parameters.Add(new SqlParameter("@ActionSaleId", actionSaleId));
                 }
-                command.Parameters.Add(new SqlParameter("@Id", furniture.Id));
-
                 command.ExecuteNonQuery();
             }
         }
@@ -64,7 +62,7 @@ namespace MyApplication.DAO
                     int actionSaleId = furniture.ActionSale == null ? -1 : furniture.ActionSale.Id;
                     if (actionSaleId == -1)
                     {
-                        command.Parameters.Add(new SqlParameter("@ActionSaleId", null));
+                        command.Parameters.Add(new SqlParameter("@ActionSaleId", DBNull.Value));
                     }
                     else
                     {
@@ -165,7 +163,7 @@ namespace MyApplication.DAO
                     {
                         int id = (int)dataReader["Id"];
                         string name = (string)dataReader["Name"];
-                        int quantity = (int)dataReader["Quantity"];
+                        int quantity = (int)(Int16)dataReader["Quantity"];
                         decimal price = (decimal)dataReader["Price"];
                         int furnitureTypeId = (int)dataReader["FurnitureTypeId"];
                         FurnitureType furnitureType = new FurnitureTypeDAO().Get(furnitureTypeId);

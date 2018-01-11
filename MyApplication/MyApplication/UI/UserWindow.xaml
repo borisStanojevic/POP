@@ -6,19 +6,59 @@
         xmlns:local="clr-namespace:MyApplication.UI"
         mc:Ignorable="d"
         Title="UserWindow" Height="375" Width="420.608" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight">
+
+    <Window.Resources>
+        <ControlTemplate x:Key="TextBoxErrorTemplate">
+            <Border BorderBrush="Red" BorderThickness="2">
+                <AdornedElementPlaceholder/>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
     <Grid>
-        <TextBox Name="tbName" Text="{Binding Path=Name}" HorizontalAlignment="Left" Height="31" Margin="156,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
-        <TextBox Name="tbSurname" Text="{Binding Path=Surname}" HorizontalAlignment="Left" Height="31" Margin="156,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
-        <TextBox Name="tbUsername" Text="{Binding Path=Username}" HorizontalAlignment="Left" Height="33" Margin="156,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbName" HorizontalAlignment="Left" Height="31" Margin="156,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextChanged="tbName_TextChanged">
+            <TextBox.Text>
+                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:StringValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbSurname" HorizontalAlignment="Left" Height="31" Margin="156,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextChanged="tbSurname_TextChanged">
+            <TextBox.Text>
+                <Binding Path="Surname" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:StringValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbUsername" HorizontalAlignment="Left" Height="33" Margin="156,114,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextChanged="tbUsername_TextChanged">
+            <TextBox.Text>
+                <Binding Path="Username" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:UsernameValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <Label Content="Name" HorizontalAlignment="Left" Height="31" Margin="10,10,0,0" VerticalAlignment="Top" Width="113"/>
         <Label Content="Surname" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,59,0,0" Width="113" Height="31"/>
         <Label Content="Username" HorizontalAlignment="Left" Height="33" Margin="10,114,0,0" VerticalAlignment="Top" Width="113"/>
         <Label Content="Password" HorizontalAlignment="Left" Height="31" Margin="10,167,0,0" VerticalAlignment="Top" Width="113"/>
-        <TextBox Name="tbPassword" Text="{Binding Path=Password}" HorizontalAlignment="Left" Height="31" Margin="156,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231"/>
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbPassword"  HorizontalAlignment="Left" Height="31" Margin="156,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="231" TextChanged="tbPassword_TextChanged">
+            <TextBox.Text>
+                <Binding Path="Password" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:PasswordValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
         <Label Content="User Type" HorizontalAlignment="Left" Height="30" Margin="10,222,0,0" VerticalAlignment="Top" Width="113"/>
         <ComboBox Name="cbUserType" SelectedItem="{Binding Path=UserType}" HorizontalAlignment="Left" Margin="156,222,0,0" VerticalAlignment="Top" Width="100"/>
         <Button Name="btnAddEditUser" Content="Add" HorizontalAlignment="Left" Margin="156,283,0,0" VerticalAlignment="Top" Width="100" Height="30" Click="btnAddEditUser_Click"/>
         <Button Content="Cancel" IsCancel="True" HorizontalAlignment="Left" Margin="281,283,0,0" VerticalAlignment="Top" Width="106" Height="30"/>
- 
+
     </Grid>
 </Window>

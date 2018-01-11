@@ -91,7 +91,7 @@ namespace MyApplication.DAO
                     {
                         int id = (int)dataReader["Id"];
                         string name = (string)dataReader["Name"];
-                        decimal discount = (decimal)dataReader["Discount"];
+                        decimal discount = Convert.ToDecimal(dataReader["Discount"]);
                         DateTime startDate = (DateTime)dataReader["StartDate"];
                         DateTime endDate = (DateTime)dataReader["EndDate"];
                         bool deleted = (bool)dataReader["Deleted"];
@@ -132,7 +132,7 @@ namespace MyApplication.DAO
                     {
                         int id = (int)dataReader["Id"];
                         string name = (string)dataReader["Name"];
-                        decimal discount = (decimal)dataReader["Discount"];
+                        decimal discount = Convert.ToDecimal(dataReader["Discount"]);
                         DateTime startDate = (DateTime)dataReader["StartDate"];
                         DateTime endDate = (DateTime)dataReader["EndDate"];
                         bool deleted = (bool)dataReader["Deleted"];

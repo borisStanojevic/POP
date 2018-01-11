@@ -35,7 +35,7 @@ namespace MyApplication.Model
 
         private decimal price;
 
-        public decimal Price
+        public virtual decimal Price
         {
             get { return price; }
             set

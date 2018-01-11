@@ -42,5 +42,12 @@ namespace MyApplication.Model
                 OnPropertyChanged("ActionSale");
             }
         }
+
+        public override decimal Price { get => actionSale != null ? base.Price - (base.Price * actionSale.Discount) : base.Price; set => base.Price = value; }
+
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }

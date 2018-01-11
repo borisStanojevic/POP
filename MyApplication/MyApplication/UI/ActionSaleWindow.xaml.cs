@@ -1,4 +1,6 @@
-﻿using MyApplication.Model;
+﻿using MyApplication.DAO;
+using MyApplication.Model;
+using MyApplication.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +33,7 @@ namespace MyApplication.UI
             this.actionSale = actionSale;
             this.mode = mode;
 
-            if(mode == Mode.EDIT)
+            if (mode == Mode.EDIT)
             {
                 tbName.DataContext = actionSale;
                 tbDiscount.DataContext = actionSale;
@@ -43,22 +45,59 @@ namespace MyApplication.UI
 
         private void btnAddEditActionSale_Click(object sender, RoutedEventArgs e)
         {
-            if (this.mode == Mode.ADD)
-            {
-                int lastElementIndex = MainWindow.actionSalesList.Count - 1;
-                int lastElementId = MainWindow.actionSalesList.ElementAt(lastElementIndex).Id;
+            ActionSaleDAO actionSaleDAO = new ActionSaleDAO();
 
-                MainWindow.actionSalesList.Add(new ActionSale
+            if (mode == Mode.ADD)
+            {
+                ActionSale actionSale = new ActionSale()
                 {
-                    Id = lastElementId + 1,
-                    Name = tbName.Text,
-                    Discount = double.Parse(tbDiscount.Text),
+                    Name = tbName.Text.Trim(),
+                    Discount = decimal.Parse(tbDiscount.Text.Trim()),
                     StartDate = dpStartDate.SelectedDate.Value.Date,
                     EndDate = dpEndDate.SelectedDate.Value.Date
-                });
+                };
+                MainWindow.actionSalesList.Add(actionSale);
+                actionSaleDAO.Add(actionSale);
             }
-            this.Close();
+            else
+            {
+                actionSale.Name = tbName.Text.Trim();
+                actionSale.Discount = decimal.Parse(tbDiscount.Text.Trim());
+                actionSale.StartDate = dpStartDate.SelectedDate.Value.Date;
+                actionSale.EndDate = dpEndDate.SelectedDate.Value.Date;
+
+                actionSaleDAO.Update(actionSale);
+            }
+
+            Close();
+        }
+
+        private void tbDiscount_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidateDiscount(tbDiscount.Text.Trim()) == false)
+            {
+                tbDiscount.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbDiscount.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbDiscount.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbDiscount.BorderThickness = new Thickness(1);
+            }
+        }
+
+        private void tbName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidateString(tbName.Text.Trim()) == false)
+            {
+                tbName.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbName.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbName.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbName.BorderThickness = new Thickness(1);
+            }
         }
     }
 }
-  

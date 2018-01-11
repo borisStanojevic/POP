@@ -1,4 +1,5 @@
 ﻿using MyApplication.Model;
+using MyApplication.Util;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -31,8 +32,17 @@ namespace MyApplication.UI
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             Furniture furniture = (Furniture)dgAllFurniture.SelectedItem;
-            SalesmanWindow.furnitureForSale.Add(furniture);
-            this.Close();
+            int pieces = int.Parse(tbPieces.Text.Trim());
+
+            SaleItem<Furniture> furnitureSaleItem = new SaleItem<Furniture>
+            {
+                ProductForSale = furniture,
+                Pieces = pieces
+            };
+
+            SalesmanWindow.furnitureForSale.Add(furnitureSaleItem);
+
+            Close();
         }
 
         private void dgAllFurniture_AutoGeneratingColumn(object sender, DataGridAutoGeneratingColumnEventArgs e)
@@ -41,10 +51,22 @@ namespace MyApplication.UI
                 e.Cancel = true;
             if ((string)e.Column.Header == "Id")
                 e.Cancel = true;
-            if ((string)e.Column.Header == "FurnitureTypeId")
+            if ((string)e.Column.Header == "Quantity")
                 e.Cancel = true;
-            if ((string)e.Column.Header == "ActionSaleId")
-                e.Cancel = true;
+        }
+
+        private void tbPieces_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidateInteger(tbPieces.Text.Trim()) == false)
+            {
+                tbPieces.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbPieces.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbPieces.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbPieces.BorderThickness = new Thickness(1);
+            }
         }
     }
 }

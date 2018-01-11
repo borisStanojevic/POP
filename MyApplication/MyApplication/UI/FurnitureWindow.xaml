@@ -5,17 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MyApplication.UI"
         mc:Ignorable="d"
-        Title="FurnitureWindow" Height="375.2" Width="400" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+        Title="FurnitureWindow" Height="443.2" Width="400" WindowStartupLocation="CenterScreen" SizeToContent="WidthAndHeight" ResizeMode="NoResize">
+
+    <Window.Resources>
+        <ControlTemplate x:Key="TextBoxErrorTemplate">
+            <Border BorderBrush="Red" BorderThickness="2">
+                <AdornedElementPlaceholder/>
+            </Border>
+        </ControlTemplate>
+    </Window.Resources>
+    
     <Grid>
         <Label Content="Name" HorizontalAlignment="Left" Height="27" Margin="10,10,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label Content="Furniture type" HorizontalAlignment="Left" Height="27" Margin="10,100,0,0" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Furniture type" HorizontalAlignment="Left" Height="27" Margin="10,151,0,0" VerticalAlignment="Top" Width="114"/>
         <Label Content="Price" HorizontalAlignment="Left" Height="27" Margin="10,52,0,0" VerticalAlignment="Top" Width="114"/>
-        <Label Content="Action sale" HorizontalAlignment="Left" Height="27" Margin="10,195,0,0" VerticalAlignment="Top" Width="114"/>
-        <TextBox Name="tbName" Text="{Binding Path=Name}"  HorizontalAlignment="Left" Height="27" Margin="151,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
-        <TextBox Name="tbPrice" Text="{Binding Path=Price}" HorizontalAlignment="Left" Height="27" Margin="151,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211"/>
-        <ComboBox Name="cbFurnitureType" SelectedValuePath="Id" SelectedItem="{Binding Path=FurnitureType}" HorizontalAlignment="Left" Height="29" Margin="151,98,0,0" VerticalAlignment="Top" Width="111"/>
-        <ComboBox Name="cbActionSale" SelectedValuePath="Id" SelectedItem="{Binding Path=ActionSale}" HorizontalAlignment="Left" Height="29" Margin="151,193,0,0" VerticalAlignment="Top" Width="111"/>
-        <Button Name="btnAddEditFurniture" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="151,273,0,0" Height="29" Click="btnAddEditFurniture_Click"/>
-        <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="264,273,0,0" Height="29"/>
+        <Label Content="Action sale" HorizontalAlignment="Left" Height="27" Margin="10,249,0,0" VerticalAlignment="Top" Width="114"/>
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbName" HorizontalAlignment="Left" Height="27" Margin="151,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextChanged="tbName_TextChanged">
+            <TextBox.Text>
+                <Binding Path="Name" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:StringValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbPrice" HorizontalAlignment="Left" Height="27" Margin="151,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextChanged="tbPrice_TextChanged">
+            <TextBox.Text>
+                <Binding Path="Price" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:IntegerValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <TextBox Validation.ErrorTemplate="{StaticResource ResourceKey=TextBoxErrorTemplate}" Name="tbQuantity"  HorizontalAlignment="Left" Height="27" Margin="151,97,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" TextChanged="tbQuantity_TextChanged">
+            <TextBox.Text>
+                <Binding Path="Quantity" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <local:IntegerValidationRule/>
+                    </Binding.ValidationRules>
+                </Binding>
+            </TextBox.Text>
+        </TextBox>
+        <ComboBox Name="cbFurnitureType" SelectedValuePath="Id"  HorizontalAlignment="Left" Height="29" Margin="151,151,0,0" VerticalAlignment="Top" Width="111" RenderTransformOrigin="0.503,1.007"/>
+        <ComboBox Name="cbActionSale" SelectedValuePath="Id" HorizontalAlignment="Left" Height="29" Margin="151,247,0,0" VerticalAlignment="Top" Width="111"/>
+        <Button Name="btnAddEditFurniture" Content="Add" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="151,323,0,0" Height="29" Click="btnAddEditFurniture_Click"/>
+        <Button IsCancel="True" Content="Cancel" HorizontalAlignment="Left" VerticalAlignment="Top" Width="98" Margin="264,323,0,0" Height="29"/>
+        <Label Content="Quantity" HorizontalAlignment="Left" Height="27" Margin="10,97,0,0" VerticalAlignment="Top" Width="114"/>
     </Grid>
 </Window>

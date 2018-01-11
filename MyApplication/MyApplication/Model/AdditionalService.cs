@@ -9,6 +9,9 @@ namespace MyApplication.Model
 {
     public class AdditionalService : Product
     {
-
+        public override string ToString()
+        {
+            return this.Name;
+        }
     }
 }

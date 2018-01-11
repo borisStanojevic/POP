@@ -17,7 +17,7 @@ namespace MyApplication.DAO
 
         public void Add(User user)
         {
-            string commandText = @"INSERT INTO User (Name,Surname,Username,Password,UserType) VALUES (@Name,@Surname,@Username,@Password,@UserType)";
+            string commandText = @"INSERT INTO [User] (Name,Surname,Username,Password,UserType) VALUES (@Name,@Surname,@Username,@Password,@UserType)";
 
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
             {
@@ -43,7 +43,7 @@ namespace MyApplication.DAO
                 if (user.Username != "")
                 {
                     con.Open();
-                    string commandText = @"UPDATE User SET Name = @Name, Surname = @Surname, Password = @Password, UserType = @UserType WHERE Username = @Username";
+                    string commandText = @"UPDATE [User] SET Name = @Name, Surname = @Surname, Password = @Password, UserType = @UserType WHERE Username = @Username";
 
                     SqlCommand command = con.CreateCommand();
                     command.CommandText = commandText;
@@ -66,7 +66,7 @@ namespace MyApplication.DAO
                 if (user.Username != "")
                 {
                     con.Open();
-                    string commandText = @"UPDATE User SET Deleted = 1 WHERE Username = @Username";
+                    string commandText = @"UPDATE [User] SET Deleted = 1 WHERE Username = @Username";
                     SqlCommand command = con.CreateCommand();
                     command.CommandText = commandText;
                     command.Parameters.Add(new SqlParameter("@Username", user.Username));
@@ -83,7 +83,7 @@ namespace MyApplication.DAO
 
         public User GetByUsername(string username)
         {
-            string commandText = @"SELECT * FROM USER WHERE Deleted = 0 AND Username = @Username";
+            string commandText = @"SELECT * FROM [User] WHERE Deleted = 0 AND Username = @Username";
 
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
             {
@@ -100,7 +100,7 @@ namespace MyApplication.DAO
                         string name = (string)dataReader["Name"];
                         string surname = (string)dataReader["Surname"];
                         string password = (string)dataReader["Password"];
-                        TypeOfUser userType = (TypeOfUser)((int)dataReader["UserType"]);
+                        TypeOfUser userType = (TypeOfUser)((int)(byte)dataReader["UserType"]);
                         bool deleted = (bool)dataReader["Deleted"];
 
                         return new User()
@@ -122,7 +122,7 @@ namespace MyApplication.DAO
         {
             ObservableCollection<User> users = new ObservableCollection<User>();
 
-            string commandText = $"SELECT * FROM USERS WHERE Deleted = 0 AND Name = {nameFilter}";
+            string commandText = $"SELECT * FROM [User] WHERE Deleted = 0 AND Username LIKE '%{nameFilter}%'";
 
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
             {
@@ -138,7 +138,7 @@ namespace MyApplication.DAO
                     string surname = (string)dataReader["Surname"];
                     string username = (string)dataReader["Username"];
                     string password = (string)dataReader["Password"];
-                    TypeOfUser userType = (TypeOfUser)((int)dataReader["UserType"]);
+                    TypeOfUser userType = (TypeOfUser)((int)(byte)dataReader["UserType"]);
                     bool deleted = (bool)dataReader["Deleted"];
 
                     users.Add(new User()

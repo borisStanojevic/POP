@@ -23,8 +23,8 @@ namespace MyApplication.UI
     public partial class SalesmanWindow : Window
     {
         public static ObservableCollection<Sale> salesList;
-        public static ObservableCollection<Furniture> furnitureForSale = new ObservableCollection<Furniture>();
-        public static ObservableCollection<AdditionalService> servicesForSale = new ObservableCollection<AdditionalService>();
+        public static ObservableCollection<SaleItem<Furniture>> furnitureForSale = new ObservableCollection<SaleItem<Furniture>>();
+        public static ObservableCollection<SaleItem<AdditionalService>> servicesForSale = new ObservableCollection<SaleItem<AdditionalService>>();
 
         public SalesmanWindow()
         {
@@ -44,13 +44,13 @@ namespace MyApplication.UI
 
         private void btnRemoveFurnitureFromSale_Click(object sender, RoutedEventArgs e)
         {
-            Furniture furniture = (Furniture)dgFurnitureForSale.SelectedItem;
+            SaleItem<Furniture> furniture = (SaleItem<Furniture>)dgFurnitureForSale.SelectedItem;
             furnitureForSale.Remove(furniture);
         }
 
         private void btnRemoveServiceFromSale_Click(object sender, RoutedEventArgs e)
         {
-            AdditionalService additionalService = (AdditionalService)dgServicesForSale.SelectedItem;
+            SaleItem<AdditionalService> additionalService = (SaleItem<AdditionalService>)dgServicesForSale.SelectedItem;
             servicesForSale.Remove(additionalService);
         }
 
@@ -64,24 +64,23 @@ namespace MyApplication.UI
             new AllAdditionalServicesWindow().ShowDialog();
         }
 
-        private void btnSaveSale_Click(object sender, RoutedEventArgs e)
-        {
-            Sale sale = new Sale();
-            foreach (var item in furnitureForSale)
-            {
-                sale.FurnitureForSale.Add(item);
-            }
-            foreach (var item in servicesForSale)
-            {
-                sale.ServicesForSale.Add(item);
-            }
-            sale.BillId = new Random().Next();
-            sale.DateOfSale = dpDateOfSale.SelectedDate.Value.Date;
-            sale.Buyer = tbBuyer.Text.Trim();
+        //private void btnSaveSale_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Sale sale = new Sale();
+        //    foreach (var item in furnitureForSale)
+        //    {
+        //        sale.FurnitureForSale.Add(item);
+        //    }
+        //    foreach (var item in servicesForSale)
+        //    {
+        //        sale.ServicesForSale.Add(item);
+        //    }
+        //    sale.Id = new Random().Next();
+        //    sale.DateOfSale = dpDateOfSale.SelectedDate.Value.Date;
+        //    sale.Buyer = tbBuyer.Text.Trim();
 
-            salesList.Add(sale);
-            GenericSerializer.Serialize<Sale>("sales.xml", salesList);
-        }
+        //    salesList.Add(sale);
+        //}
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -93,10 +92,6 @@ namespace MyApplication.UI
             if ((string)e.Column.Header == "Deleted")
                 e.Cancel = true;
             if ((string)e.Column.Header == "Id")
-                e.Cancel = true;
-            if ((string)e.Column.Header == "FurnitureTypeId")
-                e.Cancel = true;
-            if ((string)e.Column.Header == "ActionSaleId")
                 e.Cancel = true;
         }
 

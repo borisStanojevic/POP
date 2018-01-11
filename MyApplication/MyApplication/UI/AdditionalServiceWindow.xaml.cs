@@ -1,4 +1,6 @@
-﻿using MyApplication.Model;
+﻿using MyApplication.DAO;
+using MyApplication.Model;
+using MyApplication.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,20 +46,55 @@ namespace MyApplication.UI
 
         private void btnAddEditAdditionalService_Click(object sender, RoutedEventArgs e)
         {
-            if (this.mode == Mode.ADD)
-            {
-                int lastElementIndex = MainWindow.additionalServicesList.Count - 1;
-                int lastElementId = MainWindow.additionalServicesList.ElementAt(lastElementIndex).Id;
+            AdditionalServiceDAO additionalServiceDAO = new AdditionalServiceDAO();
 
-                MainWindow.additionalServicesList.Add(new AdditionalService
+            if (mode == Mode.ADD)
+            {
+                AdditionalService additionalService = new AdditionalService()
                 {
-                    Id = lastElementId + 1,
                     Name = tbName.Text.Trim(),
-                    Price = double.Parse(tbPrice.Text.Trim()),
-                    Deleted = false
-                });
+                    Price = decimal.Parse(tbPrice.Text.Trim())
+                };
+
+                MainWindow.additionalServicesList.Add(additionalService);
             }
-            this.Close();
+            else
+            {
+                additionalService.Name = tbName.Text.Trim();
+                additionalService.Price = decimal.Parse(tbPrice.Text.Trim());
+
+                additionalServiceDAO.Update(additionalService);
+            }
+
+            Close();
+        }
+
+        private void tbPrice_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidateInteger(tbPrice.Text.Trim()) == false)
+            {
+                tbPrice.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbPrice.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbPrice.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbPrice.BorderThickness = new Thickness(1);
+            }
+        }
+
+        private void tbName_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (InputValidator.ValidateString(tbName.Text.Trim()) == false)
+            {
+                tbName.BorderBrush = new SolidColorBrush(Colors.Red);
+                tbName.BorderThickness = new Thickness(2);
+            }
+            else
+            {
+                tbName.BorderBrush = new SolidColorBrush(Colors.Blue);
+                tbName.BorderThickness = new Thickness(1);
+            }
         }
     }
 }
