@@ -30,12 +30,12 @@ namespace MyApplication.UI
             string password = pbPassword.Password.ToString().Trim();
             bool isFound = false;
 
-            //User user = new UserDAO().GetByUsername(username);
-            //if (user != null)
-            //{
-            //    if (user.Password == password)
-            //        isFound = true;
-            //}
+            User user = new UserDAO().GetByUsername(username);
+            if (user != null)
+            {
+                if (user.Password == password)
+                    isFound = true;
+            }
 
             if (!isFound)
             {
@@ -47,19 +47,19 @@ namespace MyApplication.UI
             else
             {
                 tbMessage.Visibility = Visibility.Hidden;
-                //switch (user.UserType)
-                //{
-                //    case TypeOfUser.Admin:
-                //        new MainWindow().Show();
-                //        this.Close();
-                //        break;
-                //    case TypeOfUser.Salesman:
-                //        new SalesmanWindow().Show();
-                //        this.Close();
-                //        break;
-                //    default:
-                //        break;
-                //}
+                switch (user.UserType)
+                {
+                    case TypeOfUser.Admin:
+                        new MainWindow().Show();
+                        this.Close();
+                        break;
+                    case TypeOfUser.Salesman:
+                        new SalesmanWindow().Show();
+                        this.Close();
+                        break;
+                    default:
+                        break;
+                }
             }
         }
     }

@@ -92,7 +92,7 @@ namespace MyApplication.DAO
             throw new NotImplementedException();
         }
 
-        public ObservableCollection<Sale> GetAll(string nameFilter = "")
+        public ObservableCollection<Sale> GetAll()
         {
             Dictionary<int, Sale> sales = new Dictionary<int, Sale>();
 

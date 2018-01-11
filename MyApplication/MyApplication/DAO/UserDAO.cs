@@ -118,11 +118,11 @@ namespace MyApplication.DAO
             }
         }
 
-        public ObservableCollection<User> GetAll(string nameFilter = "")
+        public ObservableCollection<User> GetAll()
         {
             ObservableCollection<User> users = new ObservableCollection<User>();
 
-            string commandText = $"SELECT * FROM [User] WHERE Deleted = 0 AND Username LIKE '%{nameFilter}%'";
+            string commandText = @"SELECT * FROM [User] WHERE Deleted = 0";
 
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
             {

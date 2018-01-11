@@ -102,11 +102,11 @@ namespace MyApplication.DAO
             return null;
         }
 
-        public ObservableCollection<AdditionalService> GetAll(string nameFilter = "")
+        public ObservableCollection<AdditionalService> GetAll()
         {
             ObservableCollection<AdditionalService> additionalServices = new ObservableCollection<AdditionalService>();
 
-            string commandText = $"SELECT * FROM AdditionalService WHERE Name LIKE '%{nameFilter}%' AND Deleted = 0;";
+            string commandText = @"SELECT * FROM AdditionalService WHERE Deleted = 0";
             //Treba mi SqlConnection, SqlCommand i DataReader
 
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))

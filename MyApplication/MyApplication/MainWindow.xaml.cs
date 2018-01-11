@@ -22,21 +22,9 @@ namespace MyApplication
 {
     public partial class MainWindow : Window
     {
-        ICollectionView furnitureView;
-        public static ObservableCollection<Furniture> furnitureList;
-        ICollectionView ftView;
-        public static ObservableCollection<FurnitureType> ftList;
-        ICollectionView usersView;
-        public static ObservableCollection<User> usersList;
-        ICollectionView actionSalesView;
-        public static ObservableCollection<ActionSale> actionSalesList;
-        ICollectionView additionalServicesView;
-        public static ObservableCollection<AdditionalService> additionalServicesList;
 
         public MainWindow()
         {
-
-            new SalesmanWindow().ShowDialog();
 
             InitializeComponent();
 
@@ -292,5 +280,17 @@ namespace MyApplication
                 return aservice.Name.ToLower().Contains(tbSearchAS.Text.ToLower().Trim());
             };
         }
+
+        ICollectionView furnitureView;
+        public static ObservableCollection<Furniture> furnitureList;
+        ICollectionView ftView;
+        public static ObservableCollection<FurnitureType> ftList;
+        ICollectionView usersView;
+        public static ObservableCollection<User> usersList;
+        ICollectionView actionSalesView;
+        public static ObservableCollection<ActionSale> actionSalesList;
+        ICollectionView additionalServicesView;
+        public static ObservableCollection<AdditionalService> additionalServicesList;
+
     }
 }

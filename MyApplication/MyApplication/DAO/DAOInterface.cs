@@ -17,6 +17,6 @@ namespace MyApplication.DAO
 
         T Get(int entityId);
 
-        ObservableCollection<T> GetAll(string nameFilter);
+        ObservableCollection<T> GetAll();
     }
 }

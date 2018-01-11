@@ -142,11 +142,11 @@ namespace MyApplication.DAO
             }
         }
 
-        public ObservableCollection<Furniture> GetAll(string nameFilter = "")
+        public ObservableCollection<Furniture> GetAll()
         {
             ObservableCollection<Furniture> furniture = new ObservableCollection<Furniture>();
 
-            string commandText = $"SELECT * FROM Furniture WHERE Name LIKE '%{nameFilter}%' AND Deleted = 0;";
+            string commandText = @"SELECT * FROM Furniture WHERE Deleted = 0";
             //Treba mi SqlConnection, SqlCommand i DataReader
 
             using (con = new SqlConnection(ConfigurationManager.ConnectionStrings["FurnitureStore"].ConnectionString))
